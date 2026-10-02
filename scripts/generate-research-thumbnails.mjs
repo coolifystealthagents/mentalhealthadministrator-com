@@ -1,0 +1,1 @@
+import {spawnSync} from 'node:child_process';import fs from 'node:fs';fs.mkdirSync('public/research',{recursive:true});const r=spawnSync('python3',['thumbnail-system/assign_templates.py','--config','thumbnail-system/brand_config.json','--content','content/research','--out','thumbnail-system/research-assignments.csv','--strict'],{stdio:'inherit'});process.exit(r.status??1);

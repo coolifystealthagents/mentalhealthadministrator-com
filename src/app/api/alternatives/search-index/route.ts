@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';import {alternatives} from '@/lib/alternatives';export function GET(){return NextResponse.json(alternatives.map(({slug,title,description})=>({slug,title,description})));}

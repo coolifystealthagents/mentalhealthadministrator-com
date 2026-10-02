@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Service inquiry
+    url: https://securitymonitoringservice.com/contact-us
+    about: Use the website form for service discussions rather than a public issue.

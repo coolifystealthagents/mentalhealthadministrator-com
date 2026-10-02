@@ -1,0 +1,539 @@
+{
+  "base": "http://127.0.0.1:3418",
+  "checked": 53,
+  "failures": [],
+  "assets_checked": 35,
+  "asset_failures": [],
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 44052,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "bytes": 25935,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "bytes": 37962,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/contact-us",
+      "status": 200,
+      "bytes": 25922,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "bytes": 27245,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research",
+      "status": 200,
+      "bytes": 36447,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/alternatives",
+      "status": 200,
+      "bytes": 23922,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "bytes": 38678,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "bytes": 19135,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "bytes": 19488,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-intake-and-referral-coordination",
+      "status": 200,
+      "bytes": 41690,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-appointment-scheduling",
+      "status": 200,
+      "bytes": 40689,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-client-communication",
+      "status": 200,
+      "bytes": 40833,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/behavioral-health-insurance-administration",
+      "status": 200,
+      "bytes": 41257,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-billing-and-claims-follow-up",
+      "status": 200,
+      "bytes": 41222,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-ehr-and-records-administration",
+      "status": 200,
+      "bytes": 41079,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-provider-credentialing-support",
+      "status": 200,
+      "bytes": 41086,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/services/mental-health-practice-reporting-and-workflows",
+      "status": 200,
+      "bytes": 41254,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/appointment-reminders-and-no-show-follow-up",
+      "status": 200,
+      "bytes": 68945,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/ehr-administration-checklist-mental-health-practices",
+      "status": 200,
+      "bytes": 68831,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/mental-health-intake-workflow-checklist",
+      "status": 200,
+      "bytes": 69455,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/prior-authorization-administrative-checklist-mental-health",
+      "status": 200,
+      "bytes": 69812,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/referral-tracking-for-mental-health-practices",
+      "status": 200,
+      "bytes": 68966,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/continuity-handoff-administration",
+      "status": 200,
+      "bytes": 76146,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/appointment-reminder-evidence",
+      "status": 200,
+      "bytes": 76559,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/behavioral-health-claim-status-workqueues",
+      "status": 200,
+      "bytes": 76206,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/behavioral-health-credentialing-rosters",
+      "status": 200,
+      "bytes": 76816,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/behavioral-health-directory-accuracy",
+      "status": 200,
+      "bytes": 75964,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/behavioral-health-eligibility-verification",
+      "status": 200,
+      "bytes": 77090,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/behavioral-health-release-of-information",
+      "status": 200,
+      "bytes": 76510,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/behavioral-health-waitlist-administration",
+      "status": 200,
+      "bytes": 76622,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/crisis-boundaries-for-intake-teams",
+      "status": 200,
+      "bytes": 75329,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/ehr-access-review-administration",
+      "status": 200,
+      "bytes": 76336,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/language-access-referral-administration",
+      "status": 200,
+      "bytes": 76117,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/mental-health-access-baseline",
+      "status": 200,
+      "bytes": 75919,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/mental-health-no-show-measurement",
+      "status": 200,
+      "bytes": 75959,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/practice-operations-dashboard-definitions",
+      "status": 200,
+      "bytes": 76745,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/mental-health-prior-authorization-tracking",
+      "status": 200,
+      "bytes": 77115,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/mental-health-record-access-workflows",
+      "status": 200,
+      "bytes": 76953,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/mental-health-record-retention-maps",
+      "status": 200,
+      "bytes": 76501,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/mental-health-remittance-reconciliation",
+      "status": 200,
+      "bytes": 76931,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/referral-intake-completeness",
+      "status": 200,
+      "bytes": 75470,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/telehealth-scheduling-readiness",
+      "status": 200,
+      "bytes": 77046,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/alternatives/behavioral-health-administrative-support-alternatives",
+      "status": 200,
+      "bytes": 77555,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/alternatives/mental-health-billing-support-alternatives",
+      "status": 200,
+      "bytes": 77644,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/alternatives/mental-health-virtual-assistant-alternatives",
+      "status": 200,
+      "bytes": 77076,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/alternatives/outsourced-mental-health-scheduling-alternatives",
+      "status": 200,
+      "bytes": 76982,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/category/scheduling-administration",
+      "status": 200,
+      "bytes": 19732,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/category/ehr-administration",
+      "status": 200,
+      "bytes": 19558,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/category/practice-administration-workflows",
+      "status": 200,
+      "bytes": 19884,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/category/authorization-administration",
+      "status": 200,
+      "bytes": 19911,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/blog/category/referral-administration",
+      "status": 200,
+      "bytes": 19637,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/research/page/2",
+      "status": 200,
+      "bytes": 30736,
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/_next/static/chunks/4bd1b696-92152b0f5947070d.js",
+      "status": 200,
+      "bytes": 201054,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/500-b13bb91f5a6311b6.js",
+      "status": 200,
+      "bytes": 8631,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/794-a3c6349e754e6fcd.js",
+      "status": 200,
+      "bytes": 240795,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/about/page-6a9a5fb325061e74.js",
+      "status": 200,
+      "bytes": 203,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/alternatives/%5Bslug%5D/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/alternatives/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/blog/%5Bslug%5D/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/blog/category/%5Bslug%5D/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/blog/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/contact-us/page-014dfbcc64fb7498.js",
+      "status": 200,
+      "bytes": 2397,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/error-39e218fd5241def0.js",
+      "status": 200,
+      "bytes": 518,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/global-error-0336df517857dcb0.js",
+      "status": 200,
+      "bytes": 563,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/layout-3a78a6c1ea13a205.js",
+      "status": 200,
+      "bytes": 8889,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/page-6a9a5fb325061e74.js",
+      "status": 200,
+      "bytes": 203,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/research/%5Bslug%5D/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/research/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/research/page/%5Bpage%5D/page-ba0e250df87dc84e.js",
+      "status": 200,
+      "bytes": 3059,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/resources/page-6a9a5fb325061e74.js",
+      "status": 200,
+      "bytes": 203,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/services/%5Bslug%5D/page-6a9a5fb325061e74.js",
+      "status": 200,
+      "bytes": 203,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/app/services/page-6a9a5fb325061e74.js",
+      "status": 200,
+      "bytes": 203,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/main-app-a8b7476fd3916b26.js",
+      "status": 200,
+      "bytes": 469,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "bytes": 112594,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/chunks/webpack-6fe057fbc4848860.js",
+      "status": 200,
+      "bytes": 3252,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/css/00bf01f024cfde31.css",
+      "status": 200,
+      "bytes": 15307,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "path": "/_next/static/media/13971731025ec697-s.p.woff2",
+      "status": 200,
+      "bytes": 36980,
+      "type": "font/woff2"
+    },
+    {
+      "path": "/_next/static/media/5611c55482296524-s.p.woff2",
+      "status": 200,
+      "bytes": 58152,
+      "type": "font/woff2"
+    },
+    {
+      "path": "/images/about.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/alternatives.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/blog.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/contact-us.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/privacy.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/research.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/resources.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/services.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/images/terms.svg",
+      "status": 200,
+      "bytes": 625,
+      "type": "image/svg+xml"
+    }
+  ]
+}

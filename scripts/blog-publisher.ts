@@ -1,0 +1,1 @@
+import fs from 'node:fs';const dirs=['content/articles','content/research','content/alternatives'];const counts=Object.fromEntries(dirs.map(d=>[d,fs.readdirSync(d,{recursive:true}).filter(x=>/\.(md|mdx)$/.test(String(x))).length]));console.log(JSON.stringify({ok:true,counts,action:'No remote publish performed'},null,2));

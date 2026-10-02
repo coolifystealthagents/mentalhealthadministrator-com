@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';export async function POST(req:Request){if(req.headers.get('authorization')!==`Bearer ${process.env.REVALIDATE_SECRET}`||!process.env.REVALIDATE_SECRET)return NextResponse.json({ok:false},{status:401});return NextResponse.json({ok:true,revalidated:'sitemap'});}

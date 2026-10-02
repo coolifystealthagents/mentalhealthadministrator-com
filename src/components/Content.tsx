@@ -1,0 +1,7 @@
+import Link from 'next/link';
+export function Breadcrumbs({items}:{items:{label:string;href:string}[]}){return <nav className="breadcrumbs" aria-label="Breadcrumb">{items.map((x,i)=><span key={x.href}>{i>0?' / ':''}<Link href={x.href}>{x.label}</Link></span>)}</nav>}
+export function TableOfContents({items}:{items:{id:string;label:string}[]}){return <details className="toc"><summary>On this page</summary><ol>{items.map(x=><li key={x.id}><a href={`#${x.id}`}>{x.label}</a></li>)}</ol></details>}
+export function ResponsiveTable({headers,rows}:{headers:string[];rows:string[][]}){return <div className="table-wrap"><table><thead><tr>{headers.map(h=><th key={h}>{h}</th>)}</tr></thead><tbody>{rows.map((r,i)=><tr key={i}>{r.map((v,j)=><td key={j} data-label={headers[j]}>{v}</td>)}</tr>)}</tbody></table></div>}
+export function KeyTakeaways({items}:{items:string[]}){return <aside className="takeaways"><h2>Key takeaways</h2><ul>{items.map(x=><li key={x}>{x}</li>)}</ul></aside>}
+export function ResearchImage({src,alt,caption}:{src:string;alt:string;caption?:string}){return <figure><img src={src} alt={alt}/>{caption&&<figcaption>{caption}</figcaption>}</figure>}
+export function RelatedCards({items}:{items:{title:string;href:string;description:string}[]}){return <div className="cards">{items.map(x=><article className="card" key={x.href}><h3><Link href={x.href}>{x.title}</Link></h3><p>{x.description}</p></article>)}</div>}

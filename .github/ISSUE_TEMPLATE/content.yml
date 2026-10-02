@@ -1,0 +1,31 @@
+name: Content or research update
+description: Propose a sourced editorial correction or addition
+title: "content: "
+labels: ["type: content", "status: triage"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or proposed topic
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Requested change
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: Include stable URLs and the claims they support.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Editorial checks
+      options:
+        - label: No pricing, unsupported guarantees, or security intervention claims are included.
+          required: true

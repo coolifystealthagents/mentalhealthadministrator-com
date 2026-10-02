@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';export default function robots():MetadataRoute.Robots{const preview=(process.env.DEPLOYMENT_MODE||'preview')!=='production';return{rules:preview?{userAgent:'*',disallow:'/'}:{userAgent:'*',allow:'/'},sitemap:'https://mentalhealthadministrator.com/sitemap.xml'};}
