@@ -1,0 +1,119 @@
+{
+  "site": "MentalHealthAdministrator",
+  "domain": "mentalhealthadministrator.com",
+  "canonicalOrigin": "https://mentalhealthadministrator.com",
+  "repository": "coolifystealthagents/mentalhealthadministrator-com",
+  "branch": "main",
+  "publicationDate": "2026-10-12",
+  "blog": [
+    {
+      "slug": "mental-health-intake-document-exception-queue",
+      "title": "Build an Intake Document Exception Queue for Mental Health Practices",
+      "path": "content/articles/mental-health-intake-document-exception-queue.mdx",
+      "thumbnail": "public/blog/mental-health-intake-document-exception-queue.webp"
+    },
+    {
+      "slug": "mental-health-referral-source-reconciliation",
+      "title": "Reconcile Referral Sources Without Losing Handoff History",
+      "path": "content/articles/mental-health-referral-source-reconciliation.mdx",
+      "thumbnail": "public/blog/mental-health-referral-source-reconciliation.webp"
+    },
+    {
+      "slug": "behavioral-health-waitlist-contact-preferences",
+      "title": "Manage Waitlist Contact Preferences With Clear Boundaries",
+      "path": "content/articles/behavioral-health-waitlist-contact-preferences.mdx",
+      "thumbnail": "public/blog/behavioral-health-waitlist-contact-preferences.webp"
+    },
+    {
+      "slug": "provider-calendar-template-governance",
+      "title": "Govern Provider Calendar Templates Without Making Clinical Decisions",
+      "path": "content/articles/provider-calendar-template-governance.mdx",
+      "thumbnail": "public/blog/provider-calendar-template-governance.webp"
+    },
+    {
+      "slug": "prior-authorization-expiration-tracking",
+      "title": "Track Prior Authorization Expirations With Source Evidence",
+      "path": "content/articles/prior-authorization-expiration-tracking.mdx",
+      "thumbnail": "public/blog/prior-authorization-expiration-tracking.webp"
+    },
+    {
+      "slug": "behavioral-health-eligibility-response-provenance",
+      "title": "Preserve Provenance in Behavioral Health Eligibility Responses",
+      "path": "content/articles/behavioral-health-eligibility-response-provenance.mdx",
+      "thumbnail": "public/blog/behavioral-health-eligibility-response-provenance.webp"
+    },
+    {
+      "slug": "mental-health-record-request-custody",
+      "title": "Maintain Custody of Mental Health Record Requests",
+      "path": "content/articles/mental-health-record-request-custody.mdx",
+      "thumbnail": "public/blog/mental-health-record-request-custody.webp"
+    },
+    {
+      "slug": "mental-health-ehr-access-offboarding",
+      "title": "Offboard Mental Health EHR Access With Verifiable Closure",
+      "path": "content/articles/mental-health-ehr-access-offboarding.mdx",
+      "thumbnail": "public/blog/mental-health-ehr-access-offboarding.webp"
+    },
+    {
+      "slug": "behavioral-health-credential-expiration-controls",
+      "title": "Control Behavioral Health Credential Expiration Workflows",
+      "path": "content/articles/behavioral-health-credential-expiration-controls.mdx",
+      "thumbnail": "public/blog/behavioral-health-credential-expiration-controls.webp"
+    },
+    {
+      "slug": "mental-health-claim-status-work-queue",
+      "title": "Design a Mental Health Claim Status Work Queue",
+      "path": "content/articles/mental-health-claim-status-work-queue.mdx",
+      "thumbnail": "public/blog/mental-health-claim-status-work-queue.webp"
+    },
+    {
+      "slug": "telehealth-access-instruction-administration",
+      "title": "Administer Telehealth Access Instructions Without Clinical Overreach",
+      "path": "content/articles/telehealth-access-instruction-administration.mdx",
+      "thumbnail": "public/blog/telehealth-access-instruction-administration.webp"
+    },
+    {
+      "slug": "mental-health-administration-outage-recovery",
+      "title": "Recover Mental Health Administrative Queues After a System Outage",
+      "path": "content/articles/mental-health-administration-outage-recovery.mdx",
+      "thumbnail": "public/blog/mental-health-administration-outage-recovery.webp"
+    }
+  ],
+  "research": [
+    {
+      "slug": "mental-health-waitlist-measurement-methods",
+      "title": "Methods for Measuring Mental Health Waitlist Administration",
+      "path": "content/research/mental-health-waitlist-measurement-methods.mdx",
+      "thumbnail": "public/research/mental-health-waitlist-measurement-methods.webp",
+      "sourceCount": 10
+    },
+    {
+      "slug": "behavioral-health-directory-accuracy-controls",
+      "title": "Evidence-Based Controls for Behavioral Health Directory Accuracy",
+      "path": "content/research/behavioral-health-directory-accuracy-controls.mdx",
+      "thumbnail": "public/research/behavioral-health-directory-accuracy-controls.webp",
+      "sourceCount": 10
+    },
+    {
+      "slug": "mental-health-record-request-workflow-evidence",
+      "title": "Evidence for Mental Health Record Request Workflow Controls",
+      "path": "content/research/mental-health-record-request-workflow-evidence.mdx",
+      "thumbnail": "public/research/mental-health-record-request-workflow-evidence.webp",
+      "sourceCount": 10
+    },
+    {
+      "slug": "appointment-reminder-delivery-measurement",
+      "title": "Measuring Appointment Reminder Delivery and Follow-Up",
+      "path": "content/research/appointment-reminder-delivery-measurement.mdx",
+      "thumbnail": "public/research/appointment-reminder-delivery-measurement.webp",
+      "sourceCount": 10
+    },
+    {
+      "slug": "behavioral-health-credential-data-provenance",
+      "title": "Data Provenance in Behavioral Health Credential Administration",
+      "path": "content/research/behavioral-health-credential-data-provenance.mdx",
+      "thumbnail": "public/research/behavioral-health-credential-data-provenance.webp",
+      "sourceCount": 10
+    }
+  ]
+}
