@@ -1,0 +1,189 @@
+{
+  "site": "MentalHealthAdministrator",
+  "canonicalDomain": "https://mentalhealthadministrator.com",
+  "repository": "coolifystealthagents/mentalhealthadministrator-com",
+  "branch": "main",
+  "baseSha": "34dca0bb02269f6b692ebb980bee019592ce8a79",
+  "publicationDate": "2026-10-13",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17
+  },
+  "systems": {
+    "blog": {
+      "loader": "src/lib/articles.ts",
+      "route": "src/app/blog/[slug]/page.tsx",
+      "index": "src/app/blog/page.tsx"
+    },
+    "research": {
+      "loader": "src/lib/research.ts",
+      "route": "src/app/research/[slug]/page.tsx",
+      "index": "src/app/research/page.tsx"
+    }
+  },
+  "registryPaths": [
+    "content/articles",
+    "content/research",
+    "src/lib/articles.ts",
+    "src/lib/research.ts"
+  ],
+  "sidebarPaths": [
+    "src/components/Listing.tsx"
+  ],
+  "items": [
+    {
+      "section": "Blog",
+      "slug": "reconcile-referral-consent-before-external-handoff",
+      "title": "Reconcile Referral Consent Before External Handoff",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/reconcile-referral-consent-before-external-handoff.mdx",
+      "thumbnailPath": "public/blog/reconcile-referral-consent-before-external-handoff.webp",
+      "route": "/blog/reconcile-referral-consent-before-external-handoff"
+    },
+    {
+      "section": "Blog",
+      "slug": "maintain-interpreter-request-custody-across-scheduling",
+      "title": "Maintain Interpreter Request Custody Across Scheduling",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/maintain-interpreter-request-custody-across-scheduling.mdx",
+      "thumbnailPath": "public/blog/maintain-interpreter-request-custody-across-scheduling.webp",
+      "route": "/blog/maintain-interpreter-request-custody-across-scheduling"
+    },
+    {
+      "section": "Blog",
+      "slug": "control-behavioral-health-portal-proxy-access",
+      "title": "Control Behavioral Health Portal Proxy Access",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/control-behavioral-health-portal-proxy-access.mdx",
+      "thumbnailPath": "public/blog/control-behavioral-health-portal-proxy-access.webp",
+      "route": "/blog/control-behavioral-health-portal-proxy-access"
+    },
+    {
+      "section": "Blog",
+      "slug": "track-payer-peer-review-deadlines-without-clinical-participation",
+      "title": "Track Payer Peer Review Deadlines Without Clinical Participation",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/track-payer-peer-review-deadlines-without-clinical-participation.mdx",
+      "thumbnailPath": "public/blog/track-payer-peer-review-deadlines-without-clinical-participation.webp",
+      "route": "/blog/track-payer-peer-review-deadlines-without-clinical-participation"
+    },
+    {
+      "section": "Blog",
+      "slug": "reconcile-copayment-estimates-posted-transactions",
+      "title": "Reconcile Copayment Estimates With Posted Transactions",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/reconcile-copayment-estimates-posted-transactions.mdx",
+      "thumbnailPath": "public/blog/reconcile-copayment-estimates-posted-transactions.webp",
+      "route": "/blog/reconcile-copayment-estimates-posted-transactions"
+    },
+    {
+      "section": "Blog",
+      "slug": "route-accommodation-requests-authorized-review",
+      "title": "Route Accommodation Requests to Authorized Review",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/route-accommodation-requests-authorized-review.mdx",
+      "thumbnailPath": "public/blog/route-accommodation-requests-authorized-review.webp",
+      "route": "/blog/route-accommodation-requests-authorized-review"
+    },
+    {
+      "section": "Blog",
+      "slug": "preserve-telehealth-location-confirmation-evidence",
+      "title": "Preserve Telehealth Location Confirmation Evidence",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/preserve-telehealth-location-confirmation-evidence.mdx",
+      "thumbnailPath": "public/blog/preserve-telehealth-location-confirmation-evidence.webp",
+      "route": "/blog/preserve-telehealth-location-confirmation-evidence"
+    },
+    {
+      "section": "Blog",
+      "slug": "audit-provider-panel-status-changes",
+      "title": "Audit Provider Panel Status Changes",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/audit-provider-panel-status-changes.mdx",
+      "thumbnailPath": "public/blog/audit-provider-panel-status-changes.webp",
+      "route": "/blog/audit-provider-panel-status-changes"
+    },
+    {
+      "section": "Blog",
+      "slug": "close-duplicate-client-record-investigations",
+      "title": "Close Duplicate Client Record Investigations",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/close-duplicate-client-record-investigations.mdx",
+      "thumbnailPath": "public/blog/close-duplicate-client-record-investigations.webp",
+      "route": "/blog/close-duplicate-client-record-investigations"
+    },
+    {
+      "section": "Blog",
+      "slug": "govern-group-appointment-roster-changes",
+      "title": "Govern Group Appointment Roster Changes",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/govern-group-appointment-roster-changes.mdx",
+      "thumbnailPath": "public/blog/govern-group-appointment-roster-changes.webp",
+      "route": "/blog/govern-group-appointment-roster-changes"
+    },
+    {
+      "section": "Blog",
+      "slug": "document-returned-mail-without-sensitive-details",
+      "title": "Document Returned Mail Without Exposing Sensitive Details",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/document-returned-mail-without-sensitive-details.mdx",
+      "thumbnailPath": "public/blog/document-returned-mail-without-sensitive-details.webp",
+      "route": "/blog/document-returned-mail-without-sensitive-details"
+    },
+    {
+      "section": "Blog",
+      "slug": "maintain-after-hours-administrative-message-boundaries",
+      "title": "Maintain After Hours Administrative Message Boundaries",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/articles/maintain-after-hours-administrative-message-boundaries.mdx",
+      "thumbnailPath": "public/blog/maintain-after-hours-administrative-message-boundaries.webp",
+      "route": "/blog/maintain-after-hours-administrative-message-boundaries"
+    },
+    {
+      "section": "Research",
+      "slug": "referral-consent-handoff-record-reproducibility",
+      "title": "Reproducibility of Referral Consent Handoff Records",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/research/referral-consent-handoff-record-reproducibility.mdx",
+      "thumbnailPath": "public/research/referral-consent-handoff-record-reproducibility.webp",
+      "route": "/research/referral-consent-handoff-record-reproducibility"
+    },
+    {
+      "section": "Research",
+      "slug": "interpreter-request-administration-evidence-completeness",
+      "title": "Evidence Completeness in Interpreter Request Administration",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/research/interpreter-request-administration-evidence-completeness.mdx",
+      "thumbnailPath": "public/research/interpreter-request-administration-evidence-completeness.webp",
+      "route": "/research/interpreter-request-administration-evidence-completeness"
+    },
+    {
+      "section": "Research",
+      "slug": "portal-proxy-access-decision-traceability",
+      "title": "Traceability of Portal Proxy Access Decisions",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/research/portal-proxy-access-decision-traceability.mdx",
+      "thumbnailPath": "public/research/portal-proxy-access-decision-traceability.webp",
+      "route": "/research/portal-proxy-access-decision-traceability"
+    },
+    {
+      "section": "Research",
+      "slug": "behavioral-health-panel-status-register-reliability",
+      "title": "Reliability of Behavioral Health Panel Status Registers",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/research/behavioral-health-panel-status-register-reliability.mdx",
+      "thumbnailPath": "public/research/behavioral-health-panel-status-register-reliability.webp",
+      "route": "/research/behavioral-health-panel-status-register-reliability"
+    },
+    {
+      "section": "Research",
+      "slug": "telehealth-readiness-documentation-accuracy",
+      "title": "Accuracy of Telehealth Readiness Documentation",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "content/research/telehealth-readiness-documentation-accuracy.mdx",
+      "thumbnailPath": "public/research/telehealth-readiness-documentation-accuracy.webp",
+      "route": "/research/telehealth-readiness-documentation-accuracy"
+    }
+  ]
+}

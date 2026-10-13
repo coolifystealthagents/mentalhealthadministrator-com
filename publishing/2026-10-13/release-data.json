@@ -1,0 +1,74 @@
+{
+  "blogs": [
+    {
+      "slug": "reconcile-referral-consent-before-external-handoff",
+      "title": "Reconcile Referral Consent Before External Handoff"
+    },
+    {
+      "slug": "maintain-interpreter-request-custody-across-scheduling",
+      "title": "Maintain Interpreter Request Custody Across Scheduling"
+    },
+    {
+      "slug": "control-behavioral-health-portal-proxy-access",
+      "title": "Control Behavioral Health Portal Proxy Access"
+    },
+    {
+      "slug": "track-payer-peer-review-deadlines-without-clinical-participation",
+      "title": "Track Payer Peer Review Deadlines Without Clinical Participation"
+    },
+    {
+      "slug": "reconcile-copayment-estimates-posted-transactions",
+      "title": "Reconcile Copayment Estimates With Posted Transactions"
+    },
+    {
+      "slug": "route-accommodation-requests-authorized-review",
+      "title": "Route Accommodation Requests to Authorized Review"
+    },
+    {
+      "slug": "preserve-telehealth-location-confirmation-evidence",
+      "title": "Preserve Telehealth Location Confirmation Evidence"
+    },
+    {
+      "slug": "audit-provider-panel-status-changes",
+      "title": "Audit Provider Panel Status Changes"
+    },
+    {
+      "slug": "close-duplicate-client-record-investigations",
+      "title": "Close Duplicate Client Record Investigations"
+    },
+    {
+      "slug": "govern-group-appointment-roster-changes",
+      "title": "Govern Group Appointment Roster Changes"
+    },
+    {
+      "slug": "document-returned-mail-without-sensitive-details",
+      "title": "Document Returned Mail Without Exposing Sensitive Details"
+    },
+    {
+      "slug": "maintain-after-hours-administrative-message-boundaries",
+      "title": "Maintain After Hours Administrative Message Boundaries"
+    }
+  ],
+  "research": [
+    {
+      "slug": "referral-consent-handoff-record-reproducibility",
+      "title": "Reproducibility of Referral Consent Handoff Records"
+    },
+    {
+      "slug": "interpreter-request-administration-evidence-completeness",
+      "title": "Evidence Completeness in Interpreter Request Administration"
+    },
+    {
+      "slug": "portal-proxy-access-decision-traceability",
+      "title": "Traceability of Portal Proxy Access Decisions"
+    },
+    {
+      "slug": "behavioral-health-panel-status-register-reliability",
+      "title": "Reliability of Behavioral Health Panel Status Registers"
+    },
+    {
+      "slug": "telehealth-readiness-documentation-accuracy",
+      "title": "Accuracy of Telehealth Readiness Documentation"
+    }
+  ]
+}
