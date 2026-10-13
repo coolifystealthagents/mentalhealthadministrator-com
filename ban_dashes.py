@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 import pathlib
 import re
 import sys
+from typing import Optional
 
 BAD = {'\u2014': 'em dash', '\u2013': 'en dash', '--': 'reader facing double hyphen'}
 RENDERED_EXTENSIONS = {'.html', '.htm', '.xml', '.txt', '.svg'}
@@ -15,7 +16,7 @@ class RenderedTextParser(HTMLParser):
         self.parts: list[str] = []
         self.hidden: list[str] = []
 
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]):
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, Optional[str]]]):
         values = dict(attrs)
         if tag in {'style', 'template'}:
             self.hidden.append(tag)

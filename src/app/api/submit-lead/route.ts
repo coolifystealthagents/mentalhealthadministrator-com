@@ -5,15 +5,17 @@ export const runtime='nodejs';
 
 interface LeadPayload{
   name?:unknown;
+  first_name?:unknown;last_name?:unknown;phone_country?:unknown;phone?:unknown;company?:unknown;company_website?:unknown;company_size?:unknown;positions_to_fill?:unknown;placement?:unknown;
   email?:unknown;
   referral_source?:unknown;
   message?:unknown;
   website_url?:unknown;
 }
 
-type CleanLead={name:string;email:string;referral_source:string;message:string};
+type CleanLead={name:string;email:string;phone:string;company:string;company_website:string;company_size:string;positions_to_fill:string;referral_source:string;message:string};
 const ACR_HEALTH_URL='https://acrtracking.stealthagents.us/api/health';
 const EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PERSONAL=new Set(['gmail.com','googlemail.com','yahoo.com','hotmail.com','outlook.com','live.com','icloud.com','aol.com','proton.me','protonmail.com']);
 const recent=new Map<string,number[]>();
 
 function text(value:unknown,max:number){return typeof value==='string'?value.trim().slice(0,max):''}
@@ -34,7 +36,7 @@ async function acrAcceptingLeads(){
 }
 function scheduleFallback(lead:CleanLead,request:Request){
   void sendLeadFallbackToMattermost({
-    ...lead,
+    name:lead.name,email:lead.email,phone:lead.phone,referral_source:lead.referral_source,message:[lead.message,`Company: ${lead.company||'Not provided'}`,`Website: ${lead.company_website||'Not provided'}`,`Company size: ${lead.company_size||'Not provided'}`,`Positions: ${lead.positions_to_fill||'Not provided'}`].join('\n'),
     pageUrl:request.headers.get('referer')||'https://mentalhealthadministrator.com/contact-us',
     userAgent:request.headers.get('user-agent')||undefined,
   });
@@ -45,13 +47,18 @@ export async function POST(request:Request){
   try{body=await request.json()}catch{return NextResponse.json({ok:false,error:'Invalid request.'},{status:400})}
 
   if(text(body.website_url,200))return NextResponse.json({ok:true});
+  const firstName=text(body.first_name,60),lastName=text(body.last_name,60);
   const lead:CleanLead={
-    name:text(body.name,120),
+    name:text(body.name,120)||`${firstName} ${lastName}`.trim(),
     email:text(body.email,254).toLowerCase(),
+    phone:`${text(body.phone_country,12)} ${text(body.phone,40)}`.trim(),company:text(body.company,160),company_website:text(body.company_website,300),company_size:text(body.company_size,40),positions_to_fill:text(body.positions_to_fill,40),
     referral_source:text(body.referral_source,160),
     message:text(body.message,4000),
   };
   if(!lead.name||!EMAIL.test(lead.email))return NextResponse.json({ok:false,error:'Please enter a valid name and email.'},{status:400});
+  const full=text(body.placement,40)==='contact-page';
+  if(full&&(!firstName||!lastName||!lead.company||!lead.company_size||!lead.positions_to_fill||!lead.referral_source))return NextResponse.json({ok:false,error:'Please complete every required field.'},{status:400});
+  if(full&&PERSONAL.has(lead.email.split('@')[1]||''))return NextResponse.json({ok:false,error:'Please use a business email address.'},{status:400});
   if(rateLimited(clientKey(request)))return NextResponse.json({ok:false,error:'Please wait before trying again.'},{status:429});
 
   const destination=process.env.LEAD_WEBHOOK_URL;

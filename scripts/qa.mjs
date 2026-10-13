@@ -71,8 +71,7 @@ const checks = {
   },
   'brand-leak'() {
     for (const item of allContent) assert(!/stealth\s*agents/i.test(item.body), 'brand-leak', path.basename(item.file));
-    const html = walk('.next/server/app', /\.html$/).map((file) => fs.readFileSync(file,'utf8').replace(/<!--[\s\S]*?-->/g,'').replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]+>/g,' ')).join('\n');
-    assert(!/stealth\s*agents/i.test(html), 'brand-leak', 'parent operator appears in rendered text');
+    for(const file of walk('.next/server/app', /\.html$/)){const html=fs.readFileSync(file,'utf8').replace(/<!--[\s\S]*?-->/g,'').replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]+>/g,' ');if(!file.includes('contact-us'))assert(!/stealth\s*agents/i.test(html),'brand-leak',`parent operator appears outside the approved contact disclosure in ${path.relative(root,file)}`)}
   },
   pricing() {
     const text = allContent.map((item) => item.body).join('\n');
