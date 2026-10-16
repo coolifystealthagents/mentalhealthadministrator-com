@@ -36,7 +36,7 @@ async function acrAcceptingLeads(){
 }
 function scheduleFallback(lead:CleanLead,request:Request){
   void sendLeadFallbackToMattermost({
-    name:lead.name,email:lead.email,phone:lead.phone,referral_source:lead.referral_source,message:[lead.message,`Company: ${lead.company||'Not provided'}`,`Website: ${lead.company_website||'Not provided'}`,`Company size: ${lead.company_size||'Not provided'}`,`Positions: ${lead.positions_to_fill||'Not provided'}`].join('\n'),
+    name:lead.name,email:lead.email,phone:lead.phone,business:lead.company,companySize:lead.company_size,positions:lead.positions_to_fill,referral:lead.referral_source,message:[lead.message,`Website: ${lead.company_website||'Not provided'}`].join('\n'),
     pageUrl:request.headers.get('referer')||'https://mentalhealthadministrator.com/contact-us',
     userAgent:request.headers.get('user-agent')||undefined,
   });

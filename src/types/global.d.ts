@@ -1,29 +1,29 @@
 export {};
 
-type ACRLeadData={
-  name:string;
-  email:string;
-  phone?:string;
-  message?:string;
-  source?:string;
-  formId?:string;
-  [key:string]:unknown;
-};
-
-type ACRTrackerConfig={
-  siteId:string;
-  endpoint:string;
-  debug?:boolean;
-  funnelSteps?:Array<{path:string;step:number;label:string;event:string}>;
-};
-
-declare global{
-  interface Window{
-    ACR_TRACKER_CONFIG?:ACRTrackerConfig;
-    acrTracker?:{
-      track:(eventType:string,metadata?:Record<string,unknown>)=>void;
-      trackLead:(data:ACRLeadData)=>void;
-      flush:()=>void;
+declare global {
+  interface Window {
+    ACR_TRACKER_CONFIG?: {
+      siteId: string;
+      endpoint: string;
+      debug?: boolean;
+      test?: boolean;
+      batchInterval?: number;
+      funnelSteps?: Array<{ path: string; step: number; label: string; event: string }>;
+      userUid?: string;
+    };
+    acrTracker?: {
+      version: string;
+      isTest: boolean;
+      getUserId: () => string;
+      track: (eventType: string, metadata?: Record<string, unknown>) => void;
+      trackPageView: () => void;
+      trackScrollDepth: (depth: number) => void;
+      trackCWV: (metric: { name: string; value: number }) => void;
+      trackLead: (payload: Record<string, unknown>) => void;
+      trackLeadFromForm: (form: HTMLFormElement, options?: { skipPrefix?: string; overrides?: Record<string, unknown> }) => void;
+      checkFunnelStep: () => void;
+      flush: () => void;
+      destroy: () => void;
     };
   }
 }
