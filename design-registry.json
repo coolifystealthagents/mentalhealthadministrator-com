@@ -1,0 +1,33 @@
+{
+  "sites": [
+    {
+      "site": "mentalhealthadministrator.com",
+      "industry": "mental health practice administration",
+      "audience": "independent practitioners, group practices, and behavioral health operations leaders",
+      "designFamily": "editorial operations studio",
+      "heroComposition": "asymmetric operational overview with a focused conversion panel",
+      "typeCharacter": "calm editorial authority with compact operational labels",
+      "paletteFamily": "warm ivory, deep ink, and restrained therapeutic green",
+      "shapeGrammar": "soft rectangular cards, fine rules, and ledger-inspired rows",
+      "imageTreatment": "documentary team imagery paired with service-specific workflow illustrations",
+      "sectionRhythm": "alternating editorial narratives, structured evidence bands, and practical workflow modules",
+      "navigationTreatment": "sticky compact header with exact task-oriented routes and visible parent-brand attribution",
+      "motionSignature": "restrained review marquee and subtle state transitions with reduced-motion support",
+      "density": "information-rich but scannable, with layered detail on service and editorial pages",
+      "signatureElement": "practice workflow ledger",
+      "designRead": {
+        "DESIGN_VARIANCE": 7,
+        "MOTION_INTENSITY": 3,
+        "VISUAL_DENSITY": 6,
+        "redesignMode": "evolve",
+        "primaryTheme": "light",
+        "statement": "A calm administrative operations system that makes complex practice workflows visible and actionable.",
+        "primaryAccentStrategy": "Use therapeutic green for decisions and calls to action, supported by warm neutral surfaces and dark editorial type.",
+        "shapeSystem": "Rounded operational cards and ruled ledger modules organize information without decorative numbering.",
+        "typographyDirection": "Editorial display headings pair with highly legible sans serif body copy and concise uppercase labels.",
+        "imageDirection": "Use authentic Stealth Agents team photography and topic-specific workflow illustrations instead of generic clinical imagery.",
+        "motionRationale": "Motion reinforces continuity and status while remaining restrained, optional, and respectful of reduced-motion preferences."
+      }
+    }
+  ]
+}

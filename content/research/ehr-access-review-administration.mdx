@@ -3,7 +3,7 @@ slug: ehr-access-review-administration
 title: EHR Access Review Administration for Mental Health Practices
 seoTitle: EHR Access Review Administration for Mental Health Practices | 2026 Research
 pageH1: EHR Access Review Administration for Mental Health Practices
-excerpt: A sourced 2026 review of how to inventory users, roles, approvals, authentication status, activity review, and termination evidence, with boundaries, methods, and an operational table.
+excerpt: A reconciliation method for EHR identities, approved roles, authentication, privileged functions, audit evidence, and timely access changes.
 author: Mental Health Administrator Editorial Team
 publishedAt: '2026-10-02'
 updatedAt: '2026-10-02'
@@ -13,152 +13,117 @@ tags:
 - practice operations and records
 - access governance
 - mental health administration
-featuredImage: /og-default.svg
+featuredImage: /research/ehr-access-review-administration.webp
 heroImageAlt: Editorial diagram for ehr access review administration for mental health practices
-readingTime: 12 minutes
+readingTime: 10 minutes
 sourceCount: 10
 lastVerified: '2026-10-02'
 key_takeaways:
-- Administrative records need a named source, timestamp, status, and owner.
-- Unknown and not applicable should remain distinct from complete.
-- Qualified staff retain clinical, legal, coding, and coverage decisions.
-- Operational rates need declared denominators and exclusions.
+- Reconcile enabled accounts to current workforce and vendor rosters.
+- Review actual privileges, not role names alone.
+- Separate approval, provisioning, authentication, and observed use.
+- Preserve exceptions and compensating controls for accountable review.
 keyStats:
-- The HIPAA Security Rule requires a unique user identification for each user in covered systems subject to the rule.
-- 10 sources reviewed
-- 6 control questions in the operational table
+- HIPAA technical safeguards include unique user identification for covered systems subject to the rule.
+- 10 first-party sources reviewed
+- 3 populations reconciled in the proposed method
 ---
 
-**The HIPAA Security Rule requires a unique user identification for each user in covered systems subject to the rule.** Unique IDs support accountability but do not by themselves establish appropriate access, secure use, compliance, or absence of unauthorized activity.
+An EHR access review should answer three different questions: who can authenticate, what each identity can do, and whether that capability still has documented authorization. A staff roster alone cannot answer them. Neither can an account export, because generic, service, dormant, vendor, emergency, and test identities may not appear in human resources data.
 
-This research brief examines how to inventory users, roles, approvals, authentication status, activity review, and termination evidence. It is written for nonclinical practice administration. It does not provide diagnosis, treatment, legal advice, coding advice, a coverage determination, or a compliance certification.
+This page offers an administrative evidence method. It is not a security certification or legal conclusion. The organization must determine which HIPAA provisions and other requirements apply, and qualified security and privacy personnel must decide access appropriateness and incident response.
 
-## Key takeaways
+## Establish authoritative populations
 
-* Keep source, timestamp, status, and owner visible whenever an administrative fact can change.
-* Use explicit unknown, pending, and not applicable states instead of forcing apparent completion.
-* Route clinical, legal, coding, coverage, and disclosure decisions to qualified or authorized practice personnel.
-* Publish denominators and exclusions with every operational rate.
-* Treat national evidence as context, not a prediction for one practice.
+Use separate source populations and reconcile them. The workforce source identifies current workers, start and end dates, status, and supervisor. The identity source identifies accounts and authentication status. The authorization source contains approved role or privilege evidence. Vendor and service identities need their own accountable sponsor and purpose.
 
-## Headline statistics
+Assign a stable review ID that does not expose unnecessary personnel information. Preserve extraction time and system version. Never merge solely on display name: name changes and reused names create false matches. Preferred keys may include an immutable workforce ID and the EHR identity ID, linked through a controlled mapping.
 
-1. **The HIPAA Security Rule requires a unique user identification for each user in covered systems subject to the rule.**
-2. **10 authoritative and transparent sources were reviewed for this page.**
-3. **6 control questions organize the screenshot ready operational table and review.**
+Classify unmatched records rather than deleting them. An enabled EHR identity with no workforce match may be a legitimate contractor, integration, stale account, or mapping defect. A current worker without an identity may not need EHR access. Each state requires investigation, not an automatic conclusion.
 
-## Data sources and methodology
+## Review capability, not labels
 
-We reviewed federal regulations, agency guidance, program documentation, and selected peer reviewed or transparent industry material relevant to ehr access review administration for mental health practices. The review prioritizes primary government pages. Every source below was checked for a working landing page or stable DOI and was last verified on 2026-10-02.
+Role names such as therapist, front desk, or administrator are not evidence of their underlying permissions. Export effective privileges, including inherited group access, location scope, record categories, break-glass functions, report exports, prescribing or ordering features if present, and user-management powers. Compare that effective capability to the approved access profile.
 
-Statements were included only when the cited source supports their scope. National survey estimates retain their population and year. Regulatory time periods retain applicability caveats. Proposed counts, fields, and controls are labeled as editorial workflow models rather than empirical effects. No source was used to claim that administrative support causes a clinical outcome.
+| Evidence object | Essential fields | Review concern |
+|---|---|---|
+| Human identity | unique ID, status, affiliation | orphan or duplicate account |
+| Approval | approver, scope, date, basis | stale or missing authorization |
+| Effective access | role, groups, locations, functions | privilege accumulation |
+| Authentication | method, last success, lock state | inactivity is not proof of misuse |
+| Change ticket | request, implementer, completion time | request differs from provisioned result |
+| Service identity | owner, function, credential controls | shared accountability |
 
-1. [HHS OCR, Individuals Right under HIPAA to Access their Health Information](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html), regulatory guidance, accessed 2026-10-02.
-2. [HHS OCR, Summary of the HIPAA Privacy Rule](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html), regulatory summary, accessed 2026-10-02.
-3. [HHS OCR, Summary of the HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html), regulatory summary, accessed 2026-10-02.
-4. [45 CFR 164.316, Policies and procedures and documentation requirements](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316), current regulation, accessed 2026-10-02.
-5. [45 CFR 164.508, Uses and disclosures requiring authorization](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.508), current regulation, accessed 2026-10-02.
-6. [45 CFR 164.312, Technical safeguards](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312), current regulation, accessed 2026-10-02.
-7. [ONC, Information Blocking](https://www.healthit.gov/topic/information-blocking), federal health IT resource, accessed 2026-10-02.
-8. [ONC, SAFER Guides](https://www.healthit.gov/topic/safety/safer-guides), health IT safety resource, accessed 2026-10-02.
-9. [NIST SP 800-66 Revision 2, Implementing the HIPAA Security Rule](https://csrc.nist.gov/pubs/sp/800/66/r2/final), published February 2024, accessed 2026-10-02.
-10. [HHS OCR, Breach Notification Rule](https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html), regulatory resource, accessed 2026-10-02.
+> **Liftable statistic:** HIPAA technical safeguards include unique user identification for covered systems subject to the rule. This requirement supports attribution, but a unique ID alone does not prove least privilege, appropriate activity, or compliance.
 
-## What the evidence can establish
+## Reproducible review method
 
-The evidence can establish definitions, published population context, transaction standards, and required or recommended process elements relevant to how to inventory users, roles, approvals, authentication status, activity review, and termination evidence. It can also identify where a practice needs an owner, source record, timestamp, and exception path.
+Freeze extracts from the workforce, EHR, identity provider, vendor register, and access-request system at a documented cutoff. Normalize dates and identifiers in a working copy while retaining raw exports read-only. Produce exception classes through version-controlled matching rules.
 
-The evidence does not establish that a completed form is accurate, that a message was understood, that a payer will pay, that a referral is clinically suitable, or that one workflow caused a health result. Those conclusions require different evidence and, often, professional judgment.
+For a full census, review every enabled account and every privileged role. If a large organization samples ordinary privileges, publish sampling strata and still census high-impact and unmatched identities. Validate a subset against source screens because exports may omit inherited permissions or represent configuration labels inaccurately.
 
-## Screenshot ready ehr access review administration for mental health practices table
+The reviewer should not approve their own access. Record reviewer, decision, evidence, and date. Where a supervisor attests to a role, make clear whether they reviewed a role label or the actual privilege list. Unsupported access should enter a controlled remediation queue with an interim decision by authorized security leadership.
 
-Use this table as a discussion aid for how to inventory users, roles, approvals, authentication status, activity review, and termination evidence. Adapt it only after the practice names its systems, authorities, and applicable rules.
+## Measures that expose uncertainty
 
-| Control question | Minimum record | Preferred source | Boundary |
-|---|---|---|---|
-| Record class | Document or event type | Information inventory | Retention can differ |
-| Authority | Requester, signer, approver, or owner | Verified source | Do not infer authority |
-| Scope | Person, dates, fields, and purpose | Approved instruction | Use minimum necessary where applicable |
-| Action history | Who, what, when, source | Audit trail | Logs need review |
-| Exception | Conflict, hold, duplicate, or denial | Controlled queue | No silent override |
-| Completion | Decision and delivery evidence | Authorized record | Receipt may remain unknown |
+* **Roster match rate:** enabled human identities matched to an active approved affiliation divided by enabled human identities. Show unmatched contractors separately.
+* **Authorization coverage:** reviewed identities with current evidence supporting effective privileges divided by identities whose privileges were reviewable.
+* **Privilege mismatch count:** identities with at least one effective permission outside the approved profile. Count identities and permissions because one identity may have many differences.
+* **Deprovisioning interval:** elapsed time from authoritative termination or role-change event to verified access change. Describe negative or missing intervals rather than correcting them silently.
+* **Unowned service identities:** enabled nonhuman identities without a current accountable sponsor.
+* **Review evidence completeness:** decisions containing reviewer, source snapshot, result, and timestamp divided by completed review decisions.
 
-> **Liftable statistic:** The HIPAA Security Rule requires a unique user identification for each user in covered systems subject to the rule. Unique IDs support accountability but do not by themselves establish appropriate access, secure use, compliance, or absence of unauthorized activity.
+A low last-login count is a lead for review, not proof that an account is unnecessary. Conversely, recent use does not prove the access is authorized. Activity monitoring and access authorization are related but distinct controls.
 
-## Start with a declared purpose
+## Joiner, mover, leaver tests
 
-A record for how to inventory users, roles, approvals, authentication status, activity review, and termination evidence should begin with the operational question it is meant to answer. A broad goal such as improve access is not reproducible. A narrower purpose names the queue, eligible items, reporting period, responsible role, and decision that the report supports. This prevents a convenient proxy from silently becoming a clinical judgment.
+Simulate a new hire with delayed start, a worker moving locations, a contractor expiration, immediate termination, leave of absence, and return from leave. Check when the source event becomes visible, who authorizes the change, whether inherited groups change, and how completion is verified in the EHR rather than merely in a ticket.
 
-## Keep provenance attached
+Mover events are often the hardest because new access is added while old access remains. Compare pre-change and post-change effective privileges. For urgent removal, document the authoritative trigger and escalation route. Do not invent a universal deadline; applicable policy and risk determine timing.
 
-Copying a value into a tracker can detach it from its source and effective date. Store the source system, response or document date, capture time, and person or automated process that entered it. If a later source conflicts, preserve both entries and route the discrepancy rather than overwriting history.
+## Logging and exception handling
 
-## Use controlled status definitions
+Audit logs require governance. Define which events are collected, retention, clock synchronization, access to logs, alert ownership, and review procedure. A log existing is not the same as anyone reviewing it. NIST guidance can inform log management, while the organization's risk analysis should shape implementation.
 
-Status labels should describe observable administrative states. Each label needs inclusion criteria, exclusions, an owner, and a permitted next action. Pending should identify what is pending and from whom. Closed should require closure evidence. Unknown should remain available when the source does not support a stronger statement.
+Potential unauthorized activity belongs with the designated privacy or security process. An access reviewer should preserve evidence and route it, not announce a breach or infer motive. Keep investigation status separate from access-remediation status so disabling an account does not falsely imply the investigation is complete.
 
-## Design the exception path
+## Limitations
 
-Routine rules cannot cover every message, request, payer response, identity conflict, or system outage. Define which conditions stop processing, who receives them, how the transfer is recorded, and what happens when the owner is unavailable. An escalation log documents transfer activity, not resolution or safety.
+Exports can be stale, APIs can omit local configuration, and identity mappings can fail. Some privileges depend on context that static files do not capture. Reviewers may approve familiar names without examining details. Vendor identities and emergency accounts may operate outside routine workflows. The method cannot show that every access was appropriate merely because permissions matched an approved role.
 
-## Protect minimum necessary information
-
-Administrative convenience is not a reason to duplicate sensitive information across spreadsheets, email, or chat. Use the approved system, role based access, and the least information needed for the assigned task. Clinical narrative should not be copied into an operations report merely to explain a queue status.
-
-## Measure completeness honestly
-
-Completeness requires a declared list of applicable fields and a denominator of eligible records. Distinguish blank, unknown, not applicable, and unavailable. Report excluded records and missing source data. A high completion percentage can coexist with inaccurate entries, so a separate source verification sample is needed.
-
-## Sample for quality review
-
-A quality sample should include ordinary work as well as known exceptions. Reviewers compare the administrative record with its named source and record disagreement before adjudication. Selecting only successful records or only complaints produces a distorted view of performance.
-
-## Interpret change cautiously
-
-A change in a practice operations and records measure may coincide with staffing, demand, payer policy, calendar supply, technology, documentation, or definition changes. Preserve a metric version history and describe these competing explanations. Before and after values alone do not identify a cause.
-
-## Set a review cadence
-
-Owners should review open exceptions, stale statuses, access permissions, template versions, and unresolved transfers on a cadence suited to risk and volume. The record should show the review date and action, not simply a recurring calendar invitation. Temporary procedures need an expiry or reapproval date.
-
-## Maintain role boundaries
-
-Administrative personnel may collect, organize, transmit, and reconcile approved information. They should not infer diagnosis, urgency, medical necessity, treatment fit, coding, legal authority, or final financial responsibility. When a request crosses the boundary, preserve the original wording and send it to the named professional owner.
-
-## Implementation checklist
-
-* Name the source system and authoritative owner for every field.
-* Define eligible records, status values, exclusions, and the reporting period.
-* Preserve timestamps, source references, changes, and approval evidence.
-* Provide unknown and not applicable values with clear rules.
-* Test routine records and exceptions against source material.
-* Review privacy, security, and applicable legal requirements with qualified advisers.
-* Keep clinical and other protected decisions with authorized professionals.
+Small practices may have unavoidable role overlap. Document independence limitations and compensating review rather than claiming segregation that does not exist. Regulatory applicability, documentation periods, and required safeguards need qualified assessment.
 
 ## Frequently asked questions
 
-### What is the first administrative control for ehr access review administration for mental health practices?
+### Is an annual review always sufficient?
 
-Name the authoritative source and the person who owns exceptions. Without those two facts, a tracker can display a status but cannot support reliable follow through.
+No universal cadence is asserted here. Reviews should also respond to starts, role changes, departures, system changes, and identified risk. Leadership should set and document the applicable schedule.
 
-### Does a complete administrative record prove the underlying fact?
+### Should disabled accounts remain in the review?
 
-No. Completion shows that required fields contain permitted values. Accuracy requires comparison with the named source, and some conclusions still require qualified professional judgment.
+They can remain in reconciliation data with a disabled state and evidence. Removing them can obscure deprovisioning history or identity reuse. Retention should follow approved policy.
 
-### Can this framework be used to make clinical priority decisions?
+### Are shared accounts acceptable?
 
-No. It is an administrative control framework. Clinical urgency, suitability, diagnosis, treatment, and level of care must remain with qualified professionals under the practice policy.
+Unique attribution is an important safeguard. Any technical exception should be evaluated by authorized security and compliance personnel, with ownership and compensating controls documented rather than assumed.
 
-### How should unknown information be handled?
+### Does matching the access matrix prove appropriate access?
 
-Keep it explicitly unknown, identify the requested source, assign an owner, and record follow up. Do not substitute an assumption merely to complete a field.
-
-### Does the headline statistic predict results for a practice?
-
-No. Unique IDs support accountability but do not by themselves establish appropriate access, secure use, compliance, or absence of unauthorized activity.
+It proves only consistency with that matrix at the snapshot. The matrix itself may be outdated, and observed use may still require separate review.
 
 ## Conclusion
 
-EHR Access Review Administration for Mental Health Practices should be managed as a source controlled administrative workflow. Clear definitions, attributed facts, visible exceptions, careful denominators, and authorized decisions produce records that can be audited without overstating what administration can establish.
+Effective EHR review reconciles people, identities, approvals, and actual privileges. It makes unmatched and nonhuman accounts visible, validates implementation after role changes, and routes activity concerns without premature conclusions. The deliverable is a traceable decision set, not a compliance badge.
 
-[Request a Free consultation about this administrative workflow](/contact-us).
+## Authoritative sources
+
+1. [HHS OCR, Summary of the HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html)
+2. [45 CFR 164.312, Technical safeguards](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312)
+3. [45 CFR 164.316, Documentation requirements](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316)
+4. [NIST SP 800-66 Revision 2, Implementing the HIPAA Security Rule](https://csrc.nist.gov/pubs/sp/800/66/r2/final)
+5. [NIST SP 800-92, Guide to Computer Security Log Management](https://csrc.nist.gov/pubs/sp/800/92/final)
+6. [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+7. [ONC, SAFER Guides](https://www.healthit.gov/topic/safety/safer-guides)
+8. [HHS OCR, Breach Notification Rule](https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html)
+9. [HHS OCR, HIPAA for Professionals](https://www.hhs.gov/hipaa/for-professionals/index.html)
+10. [HHS OCR, Summary of the HIPAA Privacy Rule](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html)

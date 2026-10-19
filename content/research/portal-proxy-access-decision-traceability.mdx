@@ -3,91 +3,118 @@ slug: portal-proxy-access-decision-traceability
 title: "Traceability of Portal Proxy Access Decisions"
 seoTitle: "Traceability of Portal Proxy Access Decisions"
 pageH1: "Traceability of Portal Proxy Access Decisions"
-description: "A source-led protocol for studying proxy access decisions with declared measures and limitations."
-excerpt: "A source-led protocol for studying proxy access decisions with declared measures and limitations."
+description: "A record-level method for tracing portal proxy identity, authority, approved scope, activation, review, and revocation decisions."
+excerpt: "A record-level method for tracing portal proxy identity, authority, approved scope, activation, review, and revocation decisions."
 author: "Mental Health Administrator Editorial Team"
 publishedAt: 2026-10-13
 updatedAt: 2026-10-13
 category: "Access research"
-cluster: "proxy access decisions"
+cluster: "practice-operations-and-records"
 tags:
   - "proxy access decisions"
   - "mental health administration"
   - "evidence research"
 featuredImage: /research/portal-proxy-access-decision-traceability.webp
 heroImageAlt: "Traceability of Portal Proxy Access Decisions administrative evidence illustration"
-readingTime: "12 minutes"
+readingTime: "9 minutes"
 sourceCount: 10
 lastVerified: 2026-10-13
 keyStats:
-  - "10 authoritative sources"
-  - "Reproducible sampling protocol"
-  - "Declared limitations"
+  - "10 authoritative sources reviewed"
+  - "7 proposed fields in a local proxy decision record"
+  - "Separate grant and revocation tests"
 key_takeaways:
-  - "Measure proxy access decisions with declared fields and sources."
-  - "Separate completeness, correctness, and timeliness."
-  - "Publish exclusions and limitations."
+  - "Treat a proxy grant as a versioned decision, not a permanent relationship fact."
+  - "Trace technical permissions to approved scope."
+  - "Test revocation propagation across portal functions."
+  - "Escalate disputed authority rather than infer it."
 testimonial: null
 relatedSlugs:
   - "behavioral-health-panel-status-register-reliability"
   - "telehealth-readiness-documentation-accuracy"
 ---
 
-This brief presents a reproducible study design for proxy access decisions. It asks whether each access event can be traced to identity, authority, scope, approval, and revocation evidence. The design evaluates administrative evidence and handoffs, not clinical quality, legal compliance, or individual employee worth. In the traceability of portal proxy access decisions procedure, the evidence index uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Proxy access allows one person to use portal functions connected with another person's record. The operational risk is not limited to initial activation. Authority can be limited, changed, disputed, or revoked, while technical permissions may persist across messaging, scheduling, documents, and billing. This brief studies whether each access state can be traced to an authorized decision without deciding what authority is legally sufficient.
 
-## Research scope
+## Scope and unit of analysis
 
-Define one closed proxy access decision record as the observation unit. Eligible records need a stable identifier, final state, and retrievable source evidence. Exclude tests, confirmed duplicates, and records open at extraction, while publishing counts and reasons for every exclusion. In the traceability of portal proxy access decisions procedure, the custody log uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Use one proxy relationship version as the observation unit. A new version begins whenever scope, authority basis, status, or effective dates change. Link versions under a stable relationship ID. This avoids overwriting an earlier grant when permissions are narrowed or terminated.
 
-The study focuses on requester identity, authority source, permitted scope, approver, activation, review, and termination. Freeze the reporting window, participating locations, channels, and system versions before drawing the sample. Do not expand the population after seeing preliminary results. In the traceability of portal proxy access decisions procedure, the exception packet uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+The study covers request receipt, identities, asserted relationship, authority evidence, approved scope, activation, periodic review when locally required, revocation, and technical propagation. It excludes ordinary direct-user accounts and system tests, but their counts should appear in exclusions.
 
-## Measurement method
+## Authoritative sources and method
 
-Create a versioned data dictionary defining acceptable evidence, null states, timestamp rules, and source precedence for every field. Draw a reproducible stratified random sample by location, channel, and week. Publish the seed, query time, eligible population, requested sample, obtained sample, and missing records. In the traceability of portal proxy access decisions procedure, the review sample uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+The review uses federal privacy, security, access, civil-rights, coordination, and standards resources. They inform control design within their original scope and do not supply one proxy rule for every jurisdiction or circumstance. Sources were reviewed on 2026-10-13.
 
-Two trained reviewers independently score a calibration subset. Calculate raw agreement and an appropriate chance-adjusted statistic. Preserve original scores during adjudication. If agreement misses the declared threshold, clarify the guide and repeat calibration before reviewing the full sample. In the traceability of portal proxy access decisions procedure, the handoff register uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+1. [HHS HIPAA Privacy Guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/index.html), accessed 2026-10-13.
+2. [HHS Individual Access Guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html), accessed 2026-10-13.
+3. [HHS HIPAA Security Guidance](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html), accessed 2026-10-13.
+4. [Federal Register 42 CFR Part 2 Final Rule](https://www.federalregister.gov/documents/2024/02/16/2024-02544/confidentiality-of-substance-use-disorder-sud-patient-records), accessed 2026-10-13.
+5. [45 CFR 164.312](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312), accessed 2026-10-13.
+6. [ONC Patient Access to Health Records](https://www.healthit.gov/topic/patient-access-health-records), accessed 2026-10-13.
+7. [AHRQ Care Coordination](https://www.ahrq.gov/ncepcr/care/coordination.html), accessed 2026-10-13.
+8. [NIST Privacy Framework](https://www.nist.gov/privacy-framework), accessed 2026-10-13.
+9. [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework), accessed 2026-10-13.
+10. [ADA Effective Communication](https://www.ada.gov/resources/effective-communication/), accessed 2026-10-13.
 
-## Measures and calculations
+## Decision record and source hierarchy
 
-The primary completeness rate is records containing every mandatory element divided by eligible reviewed records. Secondary measures include field completeness, source agreement, correct owner, acknowledgment within target, resolution within target, reopened rate, and provenance-link validity. Show counts beside all percentages. In the traceability of portal proxy access decisions procedure, the control ledger uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+A proposed decision record has seven fields: subject identity evidence, proxy identity evidence, authority source, approved function scope, decision owner, effective interval, and technical account reference. Each value needs a source pointer and capture time. A free-text relationship label alone is not authority evidence.
 
-Correctness needs a prespecified reference standard. If no defensible standard exists, call the measure traceability or consistency. Use system timestamps in a declared time zone and define business-hour pauses, reopened intervals, merged records, and outage adjustments before analysis. In the traceability of portal proxy access decisions procedure, the evidence index uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+> **Liftable statistic:** This editorial framework proposes 7 local fields for a proxy decision record. Seven is a control count, not a legal sufficiency test, federal minimum, or guarantee that access is appropriate.
 
-## Bias and data quality
+Document source precedence before review. For example, an authorized decision record may govern the approved scope, while the identity service governs account identity and the portal configuration governs actual permissions. When sources disagree, record a conflict. Do not silently make the technical setting the decision of record.
 
-Poor records may also be difficult to retrieve, causing selection bias. Compare sampled and unsampled records on available attributes and name channels that cannot be queried. Mask employee, location, and outcome identifiers where feasible, then randomize review order. In the traceability of portal proxy access decisions procedure, the custody log uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+## Mapping decision to technical permission
 
-System migrations, manual backfills, copied timestamps, and inconsistent time zones create false precision. Preserve extraction logs, hash the analytic file, retain transformation code, and test a subset back to source. Append corrections rather than overwriting the raw extract. In the traceability of portal proxy access decisions procedure, the exception packet uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Build a function matrix for view, download, message, schedule, bill, amend profile, and any other portal capability. Compare approved scope with enabled scope for each sampled relationship. Record under-permission and over-permission separately because they have different consequences.
 
-## Privacy and governance
+Activation evidence should include actor, timestamp, account, decision version, and configuration result. Shared credentials defeat attribution and should not be treated as proxy access. The proxy should use a distinct account linked to the relationship according to the portal design.
 
-Use the minimum necessary information. Replace direct identifiers with study codes, separate the linkage file, restrict access, encrypt transfers, and set a deletion date. Qualified leadership should determine the applicable governance path before collection and approve every secondary use. In the traceability of portal proxy access decisions procedure, the review sample uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Revocation requires its own test. Record request or triggering event, authorized decision, system update, propagation result, and residual sessions or tokens where observable. A status changed in an administrative table is not proof that every function stopped working.
 
-Name the protocol owner, data custodian, reviewers, adjudicator, and analyst. Record deviations and conflicts of interest. The same person may hold multiple roles, but responsibility and access should remain explicit. In the traceability of portal proxy access decisions procedure, the handoff register uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+## Measures
 
-## Interpretation
+Decision traceability equals sampled relationship versions with all applicable source pointers divided by versions reviewed. Scope agreement equals function permissions agreeing with the approved matrix divided by applicable function checks. Report relationships and function checks as separate denominators.
 
-A high completeness result means sampled records contained prespecified elements. It does not prove every decision was correct, every communication was understood, or future records will perform similarly. A low result locates a workflow weakness but does not establish motive or blame. In the traceability of portal proxy access decisions procedure, the control ledger uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Activation interval runs from authorized approval to technical enablement. Revocation interval runs from authorized termination to confirmed technical disablement. Avoid combining them because system paths and risk differ. State the time zone and how outages or batch processing are handled.
 
-Examine field patterns before choosing remediation. Missing ownership may require queue configuration; missing provenance may require integration; inconsistent categories may require a clearer dictionary. Repeat the same method after intervention and disclose any definition changes. In the traceability of portal proxy access decisions procedure, the evidence index uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Unknown authority, pending review, active, suspended, revoked, expired, and conflicting evidence are useful distinct states. Completeness only means required fields are populated with permitted values. It does not prove the underlying decision was legally correct.
 
-## Limitations and responsible use
+## Sampling and reproducibility
 
-This design remains vulnerable to unavailable source systems, reviewer learning, small strata, policy changes, and records created outside included channels. One practice period may not generalize. Administrative evidence cannot determine clinical safety or certify compliance. In the traceability of portal proxy access decisions procedure, the custody log uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Sample new grants, changed scopes, routine active relationships, expirations, and revocations. Include different portal functions and request channels. Freeze the query, extraction time, portal version, and data dictionary. For a calibration subset, two reviewers should independently determine whether each source pointer is usable and whether each permission matches recorded scope.
 
-Publish the sampling frame, exclusions, missingness, agreement, uncertainty, deviations, and limitations. Avoid punitive rankings. Use findings to repair systems, clarify responsibility, and plan a preregistered follow-up review. In the traceability of portal proxy access decisions procedure, the exception packet uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Retain initial ratings and adjudication. If reviewers cannot apply a field consistently, revise the definition before scoring the full sample. Store study IDs instead of names and limit screenshots because portal pages can expose unrelated sensitive information.
 
-## Authoritative sources
+## Failure modes and response
 
-1. [HHS HIPAA privacy guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/index.html)
-2. [HHS individual access guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html)
-3. [HHS HIPAA security guidance](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html)
-4. [SAMHSA data resources](https://www.samhsa.gov/data)
-5. [NIMH mental health statistics](https://www.nimh.nih.gov/health/statistics/mental-illness)
-6. [AHRQ care coordination resources](https://www.ahrq.gov/ncepcr/care/coordination.html)
-7. [CMS interoperability resources](https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability)
-8. [NIST Privacy Framework](https://www.nist.gov/privacy-framework)
-9. [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
-10. [ADA effective communication guidance](https://www.ada.gov/resources/effective-communication/)
+Common failures include relationship labels without source evidence, activation before approval, scope copied from a prior relationship, revoked access remaining active in messaging, and a new portal migration losing the decision reference. Minor status changes may also reset effective dates and conceal relationship history.
 
-These ten sources were reviewed on 2026-10-13. Their original scope remains controlling, and the study should not extend a source beyond what its issuing authority supports. In the traceability of portal proxy access decisions procedure, the review sample uses a dedicated proxy access decisions field set so reviewers can distinguish this control from adjacent practice work.
+Choose remediation by mechanism. Add required source references for provenance gaps, role templates for configuration drift, propagation tests for revocation failures, and migration reconciliation for orphaned relationships. Potential inappropriate access should follow the designated privacy and security process, not wait for research publication.
+
+## Limitations
+
+The review observes stored records and testable functions, not every use of access. Some portals cannot expose token or session state. Authority requirements vary by age, relationship, jurisdiction, and circumstances. A technically accurate permission may still rest on an incorrect authorized decision, while a missing link may reflect migration rather than an improper grant. Small samples may miss rare combinations. This method does not certify compliance or determine legal authority.
+
+## Frequently asked questions
+
+### Is a family relationship enough to approve proxy access?
+
+This method does not answer that legal or policy question. Record the asserted relationship and route authority evaluation to the designated authorized role.
+
+### Should active proxy access be reviewed periodically?
+
+Follow the approved local policy and applicable guidance. If review is required, capture the due date, reviewer, evidence considered, and resulting relationship version.
+
+### What proves revocation?
+
+Use evidence from each applicable technical function, not only an administrative status. Define whether session termination and downloaded copies are within the test scope.
+
+### Can one completeness score summarize the control?
+
+It can summarize documentation under a declared rule, but it should not replace scope-agreement and revocation tests or imply that decisions were legally correct.
+
+## Conclusion
+
+Traceable proxy administration links a versioned decision to specific portal functions and effective dates. Separate identity, authority, approval, configuration, and revocation evidence makes discrepancies observable. The method supports careful correction while leaving authority determinations with qualified and authorized personnel.

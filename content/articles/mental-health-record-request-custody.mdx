@@ -14,11 +14,11 @@ tags:
   - "nonclinical workflow"
 featuredImage: /blog/mental-health-record-request-custody.webp
 heroImageAlt: "Administrative workflow illustration for Maintain Custody of Mental Health Record Requests"
-readingTime: "11 min read"
+readingTime: "5 min read"
 key_takeaways:
-  - "Define record request custody with a named source and owner."
-  - "Keep clinical and protected decisions with authorized practice personnel."
-  - "Preserve uncertainty, corrections, and handoff evidence."
+  - "Preserve the request as received while tracking identity, authority, scope, and delivery as separate checks."
+  - "Record every custody transfer with the actor, time, artifact, and controlled storage location."
+  - "Close only when the authorized disposition, matching preparation, and delivery result are evidenced."
 topBanner:
   id: cta-mental-health-record-request-custody-top-consultation
   title: "Map the record request custody workflow"
@@ -36,118 +36,82 @@ bottomBanner:
   href: /contact-us
 testimonial: null
 relatedSlugs:
-  - "mental-health-ehr-access-offboarding"
-  - "behavioral-health-credential-expiration-controls"
-  - "mental-health-claim-status-work-queue"
+  - "ehr-administration-checklist-mental-health-practices"
+  - "close-duplicate-client-record-investigations"
+  - "document-returned-mail-without-sensitive-details"
 ---
 
-For record request custody, a custody log can track receipt, identity questions, authority review, fulfillment status, and disclosure evidence without delegating release decisions. The workflow remains administrative: qualified practice personnel retain all clinical, safety, legal, coding, coverage, disclosure, and financial decisions.
+A record request can arrive by portal, mail, fax, email, in person, or through another organization. Custody means the practice can trace the request from receipt through identity and authority review, scope clarification, fulfillment, delivery, and final evidence. It does not mean clerical staff decide what may be disclosed.
 
-For record request custody, maintain Custody of Mental Health Record Requests starts with a named source of truth and a written definition of completion. Access to a health record or scheduling system does not authorize an assistant to interpret symptoms, assess urgency, recommend care, or promise an outcome.
+## Quick overview:
 
-## Maintain Custody of Mental Health Record Requests
+- Date-stamp the original request and assign one request ID.
+- Keep requester identity, asserted authority, requested scope, and delivery preference as separate fields.
+- Route disclosure, denial, amendment, legal process, and sensitive-record questions to authorized reviewers.
+- Record preparation and delivery as different stages.
+- Close with evidence of the approved disposition and delivery result.
 
-For record request custody, define the eligible record, entry condition, permitted action, decision owner, evidence field, and closure condition before assigning work. In a request received by email that lacks the practice-required identity evidence, the record should show what arrived from each source, what remains unknown, and which authorized person owns the next decision.
+## Preserve the request as received
 
-| Control | Required decision | Review evidence |
-| --- | --- | --- |
-| Scope | Eligible records and excluded decisions | Approved procedure |
-| Source | Authoritative system or document | Source reference and date |
-| Status | Observable administrative condition | Current value and history |
-| Owner | Person authorized for the next action | Queue assignment |
-| Exception | Condition that stops routine processing | Transfer record |
-| Closure | Evidence required to finish | Approval or handoff |
+Store the source in the approved repository without rewriting it. Capture request ID, receipt channel, received date and time, requester name, relationship claimed, person or records named, date range, requested format, delivery destination, and any deadline asserted by the requester. An asserted deadline is not automatically the governing deadline, so retain it as source information for authorized review.
 
-<aside className="article-cta" aria-label="Free consultation">
-<h3>Map the record request custody workflow</h3>
-<p>Bring the current systems, status definitions, scripts, permissions, and unresolved exceptions. We can discuss a bounded nonclinical administrative role.</p>
-<a id="cta-mental-health-record-request-custody-top-consultation" href="/contact-us">Book a Free Consultation</a>
-<p>The consultation has no fee and no obligation.</p>
-</aside>
+If the same request arrives twice, link the sources to one custody record only after confirming they are duplicates. Do not erase either receipt timestamp. A follow-up letter may change scope and should be preserved as a new event rather than treated as a duplicate.
 
-## Separate facts from protected decisions
+HHS provides first-party guidance on the [right of access](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html). Practices should use qualified guidance to determine which rules apply to a particular request, including state law and special record categories.
 
-For record request custody, an assistant may record what an approved source states, compare named administrative fields, send a current template, and route an exception. The assistant should not convert a questionnaire into screening, infer clinical fit, select a diagnosis or code, determine medical necessity, decide disclosure authority, or interpret payer language as a guarantee.
+## Separate checks that are often conflated
 
-For record request custody, preserve the original wording when a message includes a clinical, safety, medication, legal, or complaint issue. Stop the routine script and transfer it under the practice procedure. The transfer log proves that a handoff was attempted; it does not prove that the issue was resolved.
+Identity verification asks whether the requester is who they claim to be. Authority review asks whether that requester may act or receive information in the asserted capacity. Scope review determines which records and date ranges are covered. Availability identifies where responsive material resides. Each can have a different owner and result.
 
-## Build a controlled operating sequence
+Use explicit states such as identity evidence pending, authority review pending, scope clarification requested, records search in progress, authorized for preparation, exception review, ready for approved delivery, delivered, delivery failed, and closed by authorized disposition. "Processing" hides too much.
 
-1. **Confirm the current procedure.** Check its owner, version, effective date, and affected systems.
-2. **Verify the record identity.** Use approved identifiers and pause possible duplicates for authorized review.
-3. **Capture source facts.** Record values, timestamps, reference numbers, and missing evidence without inference.
-4. **Apply the permitted action.** Use the approved status, template, queue, or administrative transaction.
-5. **Route exceptions.** Preserve the incoming wording and identify the receiving owner and transfer time.
-6. **Reconcile the result.** Compare the action with the source system and document any disagreement.
-7. **Close or hand off.** Require a supported closure reason or a named owner with a next review date.
+Administrative staff may perform approved identity steps, index documents, run authorized searches, assemble candidate records, and record delivery evidence. They should not interpret a subpoena, determine a representative's legal authority, decide an exception, select redactions, or make clinical judgments about content.
 
-## Record fields that make work reviewable
+## Build a chain of custody
 
-For record request custody, use a stable local identifier, received time, source, current status, status reason, assigned owner, next action date, action history, and last reconciliation time. When external systems are involved, retain the response date, reference number, captured wording, and the person who reviewed the exception.
+Every transfer should answer who had the request or prepared package, when custody changed, what artifact moved, and where it is stored. The log can include:
 
-For record request custody, unknown, unavailable, pending, and not applicable need separate meanings. Leaving a value unknown is safer than filling a required field with an assumption. Corrections should preserve the prior value, the source that supports the change, the author, and the time.
+| Event | Evidence |
+| --- | --- |
+| receipt | source artifact and timestamp |
+| verification request | approved message and destination |
+| reviewer assignment | named role and assigned time |
+| scope decision | authorized instruction reference |
+| preparation | preparer, record set reference, page or file count where used |
+| quality check | checker and approved comparison result |
+| delivery | method, destination, timestamp, tracking or system result |
+| failure or return | error evidence and next owner |
 
-<aside className="article-cta" aria-label="Free consultation">
-<h3>Review record request custody controls</h3>
-<p>We can review source records, access boundaries, status rules, exception owners, and the evidence required for a reliable handoff.</p>
-<a id="cta-mental-health-record-request-custody-middle-review" href="/contact-us">Book a Free Consultation</a>
-<p>The consultation has no fee and no obligation.</p>
-</aside>
+Avoid copying record content into the custody log. The log should point to the controlled source and package.
 
-## Use least privilege and minimum necessary information
+## Treat delivery as a controlled event
 
-For record request custody, give each worker an individual identity and only the access required for assigned tasks. Review roles after staffing, vendor, system, and workflow changes. Remove access when duties end and reassign open work before closing the account.
+Before release, compare the approved recipient and destination with the delivery transaction. A requester's original email address may not be an approved destination. Use the practice's authorized channels and verification steps.
 
-For record request custody, do not copy sensitive narratives into email, chat, or private trackers for convenience. The practice should approve systems, channels, retention, exports, and deletion rules with appropriate legal, privacy, security, and contractual guidance.
+Suppose a portal request asks for records to be sent to an unfamiliar third-party email, while a later phone call asks for paper pickup. Preserve both instructions. Do not choose the more convenient option. Route the destination conflict to the person authorized to confirm or decide it, then record the supported instruction.
 
-## Quality review checklist
+After sending, capture whether the transmission succeeded, failed, was returned, or remains unconfirmed. "Prepared" and "sent" are not interchangeable with "delivered." If a package is returned, reopen the delivery task while preserving the initial attempt.
 
-- Compare a defined sample with its named source.
-- Confirm that status values meet their written criteria.
-- Check that clinical and other protected decisions stayed with authorized personnel.
-- Verify timestamps, owners, attempts, acknowledgments, and corrections.
-- Count unavailable evidence and exclusions instead of hiding them.
-- Assign each recurring exception to a process owner and retest the repair.
+## Monitor deadlines without making legal conclusions
 
-| Review question | Acceptable evidence | Corrective action |
-| --- | --- | --- |
-| Was the right source used? | Source link, record, or reference | Correct and preserve history |
-| Was access appropriate? | Role and access review | Restrict or remove permission |
-| Was the status supported? | Defined criteria and source fact | Reclassify with attribution |
-| Was an exception transferred? | Recipient, time, and channel | Repair the routing rule |
-| Was closure authorized? | Required approval or source state | Reopen for named review |
+The queue can calculate review dates from a rule maintained by the practice, but the rule owner determines applicability. Show the basis, start date, paused periods if the approved procedure permits them, and current due date. Flag requests approaching the review threshold and assign them; do not silently recalculate after an amendment.
 
-## Common workflow failures
-
-For record request custody, broad statuses hide the next action. Personal spreadsheets detach values from the approved system. Unbounded free text collects unnecessary detail. Silent overwrites erase provenance. One-person escalation paths fail during absence. Routine scripts become unsafe when staff continue them after a clinical or urgent reply.
-
-For record request custody, the repair is specific ownership. Define who maintains the procedure, approves scripts, reviews access, resolves identity conflicts, answers protected questions, checks sample quality, and confirms closure.
+Quality review can compare receipt sources to the custody log, check that authority decisions have named evidence, sample package-to-scope matching, and inspect delivery failures. Report excluded or unresolved cases rather than presenting a low count as guaranteed compliance.
 
 ## Frequently asked questions
 
-### Can an assistant make clinical decisions in this workflow?
+### Can an administrator decide that a request is valid?
 
-For record request custody, no. The role is limited to approved administrative actions. Assessment, diagnosis, risk evaluation, treatment, medication, and clinical prioritization remain with qualified practice personnel.
+An administrator can complete specifically approved verification steps and document results. Legal authority, disclosure scope, exceptions, and denial decisions remain with the practice's authorized reviewer.
 
-### Does a complete record prove that its contents are accurate?
+### Should duplicate requests get duplicate packages?
 
-For record request custody, no. Completeness means defined fields contain permitted values. Accuracy requires comparison with the named source, and some conclusions still require authorized professional judgment.
+Not automatically. Link suspected duplicates, preserve each source, and have the workflow determine whether the scope or destination differs before fulfillment.
 
-### What happens when the source systems disagree?
+### What proves that a request is complete?
 
-Preserve both values, their sources, and capture times. Route the discrepancy to the named owner rather than selecting the most convenient answer.
+The record needs an authorized disposition, evidence that preparation matched that disposition, and the delivery or other closure result required by the procedure. A generated file alone is not completion.
 
-### How often should the process be reviewed?
+## Keep every handoff attributable
 
-Use a cadence selected by the practice and also review after system, staffing, policy, payer, service, or recurring exception changes.
-
-## Put bounded administration into practice
-
-For record request custody, reliable record request custody work connects a defined scope, authoritative sources, least privilege, observable statuses, protected decision boundaries, and traceable handoffs. Test the workflow with ordinary records, missing information, duplicate identities, sensitive replies, unavailable owners, and system downtime before relying on it.
-
-<aside className="article-cta" aria-label="Free consultation">
-<h3>Strengthen record request custody administration</h3>
-<p>Share the current procedure and exception queue. We can discuss a supervised nonclinical workflow while your practice retains every protected decision.</p>
-<a id="cta-mental-health-record-request-custody-final-consultation" href="/contact-us">Book a Free Consultation</a>
-<p>The consultation has no fee and no obligation.</p>
-</aside>
+Request custody succeeds when staff can reconstruct the source, authorized decision, prepared package, and delivery outcome without exposing content in the tracker. Coordinate account controls through [EHR access offboarding](/blog/mental-health-ehr-access-offboarding) and govern delegated identities through [portal proxy access controls](/blog/control-behavioral-health-portal-proxy-access). A precise chain protects continuity while keeping disclosure judgment with the appropriate role.

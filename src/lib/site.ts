@@ -16,9 +16,16 @@ export type Service={
   scenario:string;
   diagram:[string,string,string,string];
   boundaries:string[];
+  image:string;
+  imageAlt:string;
+  inputs:string[];
+  qualityControls:string[];
+  faqs:{question:string;answer:string}[];
 };
 
-export const services:Service[]=[
+type ServiceCore=Omit<Service,'image'|'imageAlt'|'inputs'|'qualityControls'|'faqs'>;
+
+const serviceCore:ServiceCore[]=[
   {
     slug:'mental-health-intake-and-referral-coordination',
     title:'Mental Health Intake and Referral Coordination',
@@ -124,6 +131,64 @@ export const services:Service[]=[
     boundaries:['No clinical outcome analysis, quality-of-care judgment, diagnosis, treatment recommendation, or provider ranking','No use of a proxy metric to make decisions about an individual client or clinician','No legal, financial, privacy, or compliance certification based on a dashboard','No access expansion or new data collection without client authorization and a documented operational need']
   }
 ];
+
+type ServiceDepth=Pick<Service,'imageAlt'|'inputs'|'qualityControls'|'faqs'>;
+const serviceDepth:Record<string,ServiceDepth>={
+ 'mental-health-intake-and-referral-coordination':{
+  imageAlt:'Coordinator organizing mental health referral forms, consent status, and a qualified reviewer handoff',
+  inputs:['Approved inquiry channels','Required contact and demographic fields','Current forms and consent steps','Named intake reviewer and exception rules'],
+  qualityControls:['Required-field check before handoff','Consent status recorded from source','Every inquiry assigned to an owner','Protected concerns routed without interpretation'],
+  faqs:[{question:'Can the assistant decide whether a referral is appropriate?',answer:'No. The assistant organizes approved administrative facts, then a licensed or authorized practice professional decides fit, urgency, and next steps.'},{question:'What happens when a referral packet is incomplete?',answer:'Missing items are recorded, approved requests are sent, and the inquiry remains visible until the material arrives or an owner takes over.'},{question:'Can this include phone, email, and portal inquiries?',answer:'Yes, when the practice approves each channel, defines required fields, supplies access, and names owners for exceptions and protected questions.'}]
+ },
+ 'mental-health-appointment-scheduling':{
+  imageAlt:'Mental health practice calendar with approved appointment blocks, reminders, and exception handoffs',
+  inputs:['Provider-approved availability','Appointment types and durations','Reminder, cancellation, and waitlist rules','Named owner for scheduling exceptions'],
+  qualityControls:['Booking checked against visit rules','Confirmation reconciled to the calendar','Exceptions held for authorized review','Daily unresolved schedule handoff'],
+  faqs:[{question:'Can the assistant choose a visit type or clinician?',answer:'Only when an explicit administrative rule applies. Clinical fit, priority, and changes in care remain with qualified practice staff.'},{question:'How are waitlist requests handled by the assistant?',answer:'The assistant follows defined nonclinical criteria, records contact attempts, and offers only openings approved for that provider and visit type.'},{question:'Can reminders vary by appointment location?',answer:'Yes. Approved templates can reflect office or telehealth instructions while protected and clinical questions go to the designated owner.'}]
+ },
+ 'mental-health-client-communication':{
+  imageAlt:'Administrative inbox with routine mental health client messages, approved replies, and protected-topic routing',
+  inputs:['Assigned inboxes and phone queues','Approved response templates','Message categories and routing rules','Recipients for clinical and safety messages'],
+  qualityControls:['Sender and channel recorded','Replies limited to approved information','Protected topics transferred accurately','Unresolved messages retain owner and timestamp'],
+  faqs:[{question:'Which client messages can an assistant answer?',answer:'The role can answer approved administrative questions about forms, office details, scheduling steps, directions, and portal instructions.'},{question:'How are clinical or medication questions handled?',answer:'The assistant does not answer them. The original concern is documented and routed promptly to the named qualified team member.'},{question:'Can this cover voicemail and an online inbox?',answer:'Yes. Each channel needs approved access, coverage expectations, templates, categories, and a destination for nonroutine messages.'}]
+ },
+ 'behavioral-health-insurance-administration':{
+  imageAlt:'Behavioral health insurance workspace showing eligibility sources, authorization dates, and owner review',
+  inputs:['Client-supplied member details','Approved payer inquiry procedures','Authorized service and authorization records','Owner for coverage conflicts'],
+  qualityControls:['Response captured with date and source','Reported values separated from guarantees','Authorization status checked','Conflicts routed without interpretation'],
+  faqs:[{question:'Does an eligibility response guarantee coverage?',answer:'No. The assistant records what the payer source reports at that time without promising coverage, reimbursement, or client responsibility.'},{question:'Can the assistant prepare authorization administration?',answer:'Administrative fields and status may be supported, but clinical criteria, diagnosis facts, and service decisions stay with authorized professionals.'},{question:'How are conflicting payer responses handled?',answer:'Each response and reference is preserved, then the conflict is sent to the designated owner rather than resolved by unsupported interpretation.'}]
+ },
+ 'mental-health-billing-and-claims-follow-up':{
+  imageAlt:'Mental health claims ledger with payer status, remittance records, deadlines, and correction owners',
+  inputs:['Approved final claim files','Payer status procedures','Approved remittance instructions','Owners for coding and appeal decisions'],
+  qualityControls:['Payer references retained','Posting reconciled to instructions','No code or clinical record changed','Deadlines assigned to owners'],
+  faqs:[{question:'Can an assistant correct a rejected claim independently?',answer:'No. The payer message is organized while authorized staff approve any change to identifiers, codes, charges, or clinical facts.'},{question:'What does claims follow-up produce?',answer:'The practice receives a current queue, payer references, posting records, document requests, deadlines, and ownership for unresolved decisions.'},{question:'Can the assistant tell a client what they owe?',answer:'Only an approved status message may be sent. Balances, hardship, refunds, collections, and interpretation remain with authorized staff.'}]
+ },
+ 'mental-health-ehr-and-records-administration':{
+  imageAlt:'Mental health records workspace with document indexing, request tracking, and controlled access handoffs',
+  inputs:['Approved systems and access roles','Document categories and naming rules','Records-request procedures','Authorized disclosure and retention owners'],
+  qualityControls:['Identity checked before indexing','Possible duplicates paused','Release status verified','Changes recorded in approved systems'],
+  faqs:[{question:'Can an assistant amend clinical documentation?',answer:'No. Work is limited to administrative indexing, status tracking, and approved fields. Clinical authorship and amendments stay with authorized professionals.'},{question:'What happens with possible duplicate profiles?',answer:'Both records are flagged and uncertain filing or disclosure pauses until the authorized records owner resolves identity.'},{question:'Can records requests be tracked without release authority?',answer:'Yes. Receipt, paperwork, dates, and ownership can be tracked while the practice retains all disclosure decisions.'}]
+ },
+ 'mental-health-provider-credentialing-support':{
+  imageAlt:'Provider credentialing desk with source documents, renewal dates, attestations, and payer status',
+  inputs:['Provider roster and checklist','Current approved source documents','Payer forms and portal procedures','Authorized provider or organization signer'],
+  qualityControls:['Entries traced to source','Renewal dates checked','Discrepancies held for review','Attestations left to signers'],
+  faqs:[{question:'Can an assistant attest for a clinician?',answer:'No. Providers or authorized leaders review professional facts and personally complete required signatures, attestations, and disclosures.'},{question:'Which credentialing tasks are administrative?',answer:'Checklists, approved data entry, roster maintenance, reminders, correspondence logs, and status follow-up can follow written procedures.'},{question:'Does tracking guarantee payer enrollment?',answer:'No. Tracking reports items, requests, statuses, and owners without guaranteeing enrollment, acceptance, timing, or directory accuracy.'}]
+ },
+ 'mental-health-practice-reporting-and-workflows':{
+  imageAlt:'Mental health practice workflow ledger with source measures, aging queues, and owner decisions',
+  inputs:['Approved source systems','Metric definitions and exclusions','Workflow stages and owners','Practice leader for interpretation'],
+  qualityControls:['Measures tied to named source','Totals reconciled','Dates and limitations shown','Changes versioned after approval'],
+  faqs:[{question:'Can reporting evaluate clinical quality?',answer:'No. This scope covers administrative workload, status, and aging. Clinical outcomes and provider judgments are outside the assignment.'},{question:'What can an administrative dashboard show?',answer:'It can show defined counts and queues for inquiries, appointments, requests, claims statuses, aging items, and handoff ownership.'},{question:'Who decides what changes after a report?',answer:'Practice leaders interpret the information and approve changes. The assistant documents the workflow but makes no clinical or management conclusion.'}]
+ }
+};
+
+export const services:Service[]=serviceCore.map((service)=>({
+ ...service,
+ image:`/images/${service.slug}.svg`,
+ ...serviceDepth[service.slug]
+}));
 
 export const serviceGroups={
   access:['mental-health-intake-and-referral-coordination','mental-health-appointment-scheduling','mental-health-client-communication'],

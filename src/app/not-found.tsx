@@ -1,1 +1,1 @@
-import Link from 'next/link';export default function NotFound(){return <section className="not-found shell"><p className="eyebrow">Page not found</p><h1>This camera view is unavailable</h1><p>The requested page does not exist.</p><Link href="/">Return home</Link></section>}
+import Link from 'next/link';export default function NotFound(){return <section className="not-found shell"><p className="eyebrow">Page not found</p><h1>This practice-desk page is unavailable</h1><p>The requested page does not exist.</p><Link href="/">Return home</Link></section>}

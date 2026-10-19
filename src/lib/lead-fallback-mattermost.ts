@@ -6,8 +6,10 @@ const SITE_ID = 'mental-health-administrator';
 export interface FallbackLeadPayload {
   name: string;
   email: string;
+  phoneCountry?: string;
   phone: string;
   business?: string;
+  companyWebsite?: string;
   message?: string;
   companySize?: string;
   positions?: string;
@@ -32,36 +34,43 @@ async function isACRHealthy(): Promise<boolean> {
   }
 }
 
-export async function sendLeadFallbackToMattermost(lead: FallbackLeadPayload): Promise<void> {
+export async function sendLeadFallbackToMattermost(lead: FallbackLeadPayload, options: {forceDelivery?: boolean} = {}): Promise<void> {
   const fallbackWebhook = process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL;
   if (!fallbackWebhook) {
     console.warn('[lead-fallback] SITE_MATTERMOST_FALLBACK_WEBHOOK_URL is missing');
     return;
   }
   try {
-    if (await isACRHealthy()) {
-      console.info('[lead-fallback] ACR healthy; site-direct skipped');
-      return;
+    if (!options.forceDelivery) {
+      if (await isACRHealthy()) {
+        console.info('[lead-fallback] ACR healthy; site-direct skipped');
+        return;
+      }
+      console.warn('[lead-fallback] ACR probe failed; waiting 15s before re-probe');
+      await new Promise((resolve) => setTimeout(resolve, 15_000));
+      if (await isACRHealthy()) {
+        console.info('[lead-fallback] ACR recovered; site-direct skipped');
+        return;
+      }
     }
-    console.warn('[lead-fallback] ACR probe failed; waiting 15s before re-probe');
-    await new Promise((resolve) => setTimeout(resolve, 15_000));
-    if (await isACRHealthy()) {
-      console.info('[lead-fallback] ACR recovered; site-direct skipped');
-      return;
-    }
-    if (looksLikeGarbagePiiLead(lead)) {
+    if (!options.forceDelivery && looksLikeGarbagePiiLead(lead)) {
       console.warn('[lead-fallback] garbage_pii_lead_submit; site-direct dropped');
       return;
     }
+    const deliveryReason = options.forceDelivery
+      ? 'Submitted by the site fallback after the accepted-lead destination rejected delivery'
+      : 'Submitted by the site fallback after ACR failed two health probes';
     const lines = [
-      `**[SITE-DIRECT:${SITE_ID}] New lead — ${escapeMd(lead.name || lead.email || lead.phone || 'unknown')}**`,
-      `_Submitted by the site's independent fallback because ACR failed two health probes_`,
+      `**[SITE-DIRECT:${SITE_ID}] New lead: ${escapeMd(lead.name || lead.email || lead.phone || 'unknown')}**`,
+      `_${deliveryReason}_`,
       '', '| Field | Value |', '|---|---|',
       `| Site | ${escapeMd(SITE_ID)} |`,
       `| Name | ${escapeMd(lead.name) || '_(empty)_'} |`,
       `| Email | ${escapeMd(lead.email) || '_(empty)_'} |`,
+      `| Phone country | ${escapeMd(lead.phoneCountry) || '-'} |`,
       `| Phone | ${escapeMd(lead.phone) || '_(empty)_'} |`,
       `| Business | ${escapeMd(lead.business) || '-'} |`,
+      `| Website | ${escapeMd(lead.companyWebsite) || '-'} |`,
       `| Company size | ${escapeMd(lead.companySize) || '-'} |`,
       `| Positions | ${escapeMd(lead.positions) || '-'} |`,
       `| Referral | ${escapeMd(lead.referral) || '-'} |`,
@@ -91,7 +100,12 @@ export async function sendLeadFallbackToMattermost(lead: FallbackLeadPayload): P
 
 function escapeMd(value: string | undefined): string {
   if (!value) return '';
-  return String(value).replace(/[|`*_\\]/g, (character) => `\\${character}`).slice(0, 1_000);
+  return String(value)
+    .slice(0, 4_000)
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, ' ')
+    .replace(/\r\n?|\n/g, ' ')
+    .replace(/@/g, '@\u200B')
+    .replace(/[\\`*_{}\[\]()<>#+\-.!|~>]/g, (character) => `\\${character}`);
 }
 
 function looksRandomAlphanumeric(value: string): boolean {

@@ -102,9 +102,21 @@ export function headingId(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
 }
 
-export function h2Headings(body: string) {
-  return body.split('\n').flatMap((line) => {
-    const match = line.match(/^##\s+(.+)$/);
-    return match ? [{ id: headingId(match[1].replace(/[*_`]/g, '')), label: match[1].replace(/[*_`]/g, '') }] : [];
+export type ContentHeading={id:string;label:string;level:2|3};
+
+export function contentHeadings(body:string):ContentHeading[]{
+  const counts=new Map<string,number>();
+  return body.split('\n').flatMap((line)=>{
+    const match=line.match(/^(##|###)\s+(.+)$/);
+    if(!match)return [];
+    const label=match[2].replace(/[*_`]/g,'').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').trim();
+    const base=headingId(label);
+    const seen=counts.get(base)||0;
+    counts.set(base,seen+1);
+    return [{id:seen?`${base}-${seen}`:base,label,level:match[1].length as 2|3}];
   });
+}
+
+export function h2Headings(body:string){
+  return contentHeadings(body).filter((heading)=>heading.level===2);
 }

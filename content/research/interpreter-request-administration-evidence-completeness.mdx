@@ -3,30 +3,31 @@ slug: interpreter-request-administration-evidence-completeness
 title: "Evidence Completeness in Interpreter Request Administration"
 seoTitle: "Evidence Completeness in Interpreter Request Administration"
 pageH1: "Evidence Completeness in Interpreter Request Administration"
-description: "A source-led protocol for studying interpreter requests with declared measures and limitations."
-excerpt: "A source-led protocol for studying interpreter requests with declared measures and limitations."
+description: "A record-level study of whether interpreter requests retain language, modality, appointment linkage, arrangement, and confirmation evidence."
+excerpt: "A reproducible audit method for interpreter request evidence, fulfillment states, vendor handoffs, and source verification."
 author: "Mental Health Administrator Editorial Team"
 publishedAt: 2026-10-13
 updatedAt: 2026-10-13
 category: "Access research"
-cluster: "interpreter requests"
+cluster: "client-access-and-referrals"
 tags:
   - "interpreter requests"
   - "mental health administration"
   - "evidence research"
 featuredImage: /research/interpreter-request-administration-evidence-completeness.webp
 heroImageAlt: "Evidence Completeness in Interpreter Request Administration administrative evidence illustration"
-readingTime: "12 minutes"
+readingTime: "10 minutes"
 sourceCount: 10
 lastVerified: 2026-10-13
 keyStats:
-  - "10 authoritative sources"
-  - "Reproducible sampling protocol"
-  - "Declared limitations"
+  - "10 first-party sources"
+  - "5 proposed evidence elements"
+  - "Separate request and fulfillment denominators"
 key_takeaways:
-  - "Measure interpreter requests with declared fields and sources."
-  - "Separate completeness, correctness, and timeliness."
-  - "Publish exclusions and limitations."
+  - "Audit the original request separately from the service arrangement."
+  - "Do not infer preferred language from prior visits or demographics."
+  - "Treat booked, confirmed, arrived, and unavailable as different states."
+  - "Publish records that cannot be verified from source evidence."
 testimonial: null
 relatedSlugs:
   - "portal-proxy-access-decision-traceability"
@@ -34,61 +35,106 @@ relatedSlugs:
   - "telehealth-readiness-documentation-accuracy"
 ---
 
-This brief presents a reproducible study design for interpreter requests. It asks whether scheduling records preserve requested language, channel, service arrangement, owner, and confirmation. The design evaluates administrative evidence and handoffs, not clinical quality, legal compliance, or individual employee worth. In the evidence completeness in interpreter request administration procedure, the control ledger uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+Interpreter request evidence travels across intake forms, scheduling notes, vendor portals, confirmations, and appointment records. A single checked box cannot establish the full chain. Research should distinguish what the person requested, what the practice arranged, what a vendor acknowledged, and what occurred at the encounter.
 
-## Research scope
+This protocol evaluates administrative evidence. It does not assess language proficiency, clinical communication quality, legal compliance, or interpreter competence. Applicable duties depend on the organization and circumstances and require qualified review.
 
-Define one closed interpreter request record as the observation unit. Eligible records need a stable identifier, final state, and retrievable source evidence. Exclude tests, confirmed duplicates, and records open at extraction, while publishing counts and reasons for every exclusion. In the evidence completeness in interpreter request administration procedure, the evidence index uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+## Research question and observation unit
 
-The study focuses on language request, communication mode, appointment reference, vendor state, confirmation, exception, and closure. Freeze the reporting window, participating locations, channels, and system versions before drawing the sample. Do not expand the population after seeing preliminary results. In the evidence completeness in interpreter request administration procedure, the custody log uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+The primary question is: among appointments for which language assistance was requested or administratively indicated under the approved process, how often can the request and resulting arrangement be reconstructed from source records?
 
-## Measurement method
+Use one appointment-interpreter request pair as the unit. One appointment may have more than one request if modalities or languages change, so retain version history and identify the final applicable request. Define whether cancellations before arrangement, same-day requests, recurring appointments, and requests supplied by a representative are eligible. Never infer a request from name, country, accent, diagnosis, or a language used on a previous visit.
 
-Create a versioned data dictionary defining acceptable evidence, null states, timestamp rules, and source precedence for every field. Draw a reproducible stratified random sample by location, channel, and week. Publish the seed, query time, eligible population, requested sample, obtained sample, and missing records. In the evidence completeness in interpreter request administration procedure, the exception packet uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+Build the population from both request sources and vendor or internal service logs. Using only a vendor file excludes requests that never reached the vendor and inflates apparent fulfillment. Deduplicate with appointment ID, request timestamp, language, and source, while retaining uncertain matches.
 
-Two trained reviewers independently score a calibration subset. Calculate raw agreement and an appropriate chance-adjusted statistic. Preserve original scores during adjudication. If agreement misses the declared threshold, clarify the guide and repeat calibration before reviewing the full sample. In the evidence completeness in interpreter request administration procedure, the review sample uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+## Evidence model
 
-## Measures and calculations
+Reviewers need explicit source precedence and null states.
 
-The primary completeness rate is records containing every mandatory element divided by eligible reviewed records. Secondary measures include field completeness, source agreement, correct owner, acknowledgment within target, resolution within target, reopened rate, and provenance-link validity. Show counts beside all percentages. In the evidence completeness in interpreter request administration procedure, the handoff register uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+| Element | Preferred evidence | Distinct nulls |
+|---|---|---|
+| Requested language | person's or authorized representative's recorded statement | unknown, not asked, declined |
+| Modality or aid | recorded communication request | unspecified, unavailable |
+| Appointment link | stable appointment and location ID | unmatched, appointment removed |
+| Arrangement | vendor order or assigned internal resource | pending, not requested, failed |
+| Confirmation | named service acknowledgment and time | awaiting, rejected, expired |
+| Encounter result | operational arrival or cancellation record | not observed, appointment cancelled |
 
-Correctness needs a prespecified reference standard. If no defensible standard exists, call the measure traceability or consistency. Use system timestamps in a declared time zone and define business-hour pauses, reopened intervals, merged records, and outage adjustments before analysis. In the evidence completeness in interpreter request administration procedure, the control ledger uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+The first five rows are the core completeness elements. Encounter result is a separate follow-through observation and is not included in the five-element completeness count.
 
-## Bias and data quality
+A translation request, spoken-language interpreter, sign-language interpreter, captioning, and another communication aid should not be collapsed into one generic yes value. Administrators can capture the request accurately but should not decide which accommodation is legally or clinically sufficient.
 
-Poor records may also be difficult to retrieve, causing selection bias. Compare sampled and unsampled records on available attributes and name channels that cannot be queried. Mask employee, location, and outcome identifiers where feasible, then randomize review order. In the evidence completeness in interpreter request administration procedure, the evidence index uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+> **Liftable statistic:** A proposed local completeness review checks 5 core evidence elements: stated language, requested modality, appointment link, arrangement status, and confirmation source. Five is a study design choice, not a statutory minimum or national benchmark.
 
-System migrations, manual backfills, copied timestamps, and inconsistent time zones create false precision. Preserve extraction logs, hash the analytic file, retain transformation code, and test a subset back to source. Append corrections rather than overwriting the raw extract. In the evidence completeness in interpreter request administration procedure, the custody log uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+## Sampling and reviewer procedure
 
-## Privacy and governance
+Freeze a reporting window and take immutable exports from intake, scheduling, and service-arrangement sources. Record query logic, time zone, extraction time, software version, and excluded counts. A census is preferable for small populations. For sampling, stratify by language, location, request channel, appointment mode, and month, while avoiding strata so small that people could be identified in publication.
 
-Use the minimum necessary information. Replace direct identifiers with study codes, separate the linkage file, restrict access, encrypt transfers, and set a deletion date. Qualified leadership should determine the applicable governance path before collection and approve every secondary use. In the evidence completeness in interpreter request administration procedure, the exception packet uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+Create a blinded review packet with the minimum information needed. Two reviewers independently score a calibration set as present and supported, present but conflicting, absent, not applicable under the dictionary, or source unavailable. Calculate agreement for each field and discuss discrepancies before full review. Do not convert disagreement into missingness; it may reveal an ambiguous definition.
 
-Name the protocol owner, data custodian, reviewers, adjudicator, and analyst. Record deviations and conflicts of interest. The same person may hold multiple roles, but responsibility and access should remain explicit. In the evidence completeness in interpreter request administration procedure, the review sample uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+Trace a subset from the request forward and another subset from service confirmations backward. Bidirectional tracing exposes orphaned requests and vendor records that cannot be linked to an appointment. Preserve raw values and apply normalized labels only in the analytic copy.
 
-## Interpretation
+## Measures and denominators
 
-A high completeness result means sampled records contained prespecified elements. It does not prove every decision was correct, every communication was understood, or future records will perform similarly. A low result locates a workflow weakness but does not establish motive or blame. In the evidence completeness in interpreter request administration procedure, the handoff register uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+The **request completeness rate** is eligible requests containing all applicable request-side fields divided by eligible reviewed requests. The **arrangement traceability rate** is requests requiring an arrangement with a linked order or internal assignment divided by reviewed requests requiring arrangement. These denominators must not be merged.
 
-Examine field patterns before choosing remediation. Missing ownership may require queue configuration; missing provenance may require integration; inconsistent categories may require a clearer dictionary. Repeat the same method after intervention and disclose any definition changes. In the evidence completeness in interpreter request administration procedure, the control ledger uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+Additional measures include:
 
-## Limitations and responsible use
+* confirmations linked to a valid appointment divided by confirmations reviewed;
+* requests with conflicting language or modality across sources divided by requests with multiple available sources;
+* arrangements still pending at a declared cutoff, shown in aging bands;
+* encounters with an operational result recorded divided by eligible completed or cancelled appointments;
+* records excluded because every source was unavailable, shown as a count rather than treated as failures.
 
-This design remains vulnerable to unavailable source systems, reviewer learning, small strata, policy changes, and records created outside included channels. One practice period may not generalize. Administrative evidence cannot determine clinical safety or certify compliance. In the evidence completeness in interpreter request administration procedure, the evidence index uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+For timeliness, choose start and stop events in advance. Request-to-order time measures an internal handoff. Order-to-confirmation time includes vendor response. Pause rules and business hours must be stated. A fast order is not proof that assistance was suitable or delivered.
 
-Publish the sampling frame, exclusions, missingness, agreement, uncertainty, deviations, and limitations. Avoid punitive rankings. Use findings to repair systems, clarify responsibility, and plan a preregistered follow-up review. In the evidence completeness in interpreter request administration procedure, the custody log uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+## Error patterns worth investigating
+
+Free-text language names can fragment one language into many spellings. Mapping may improve analysis, but retain the original value and have language-access leadership approve categories. Default values can create apparent completeness even when nobody asked. Compare creation timestamps and repeated patterns to identify defaults for review.
+
+Recurring appointment series create another trap: an interpreter may be confirmed for one occurrence but copied to all. Validate at the occurrence level. Rescheduled visits need a new linkage check because location and time may change. When the vendor rejects a request, record the exact returned status and next owner instead of retaining booked.
+
+A service-arrived field may be entered by staff without an external source. Classify it according to the evidence dictionary rather than silently treating it as confirmation. If the person reports that the arrangement did not meet the request, preserve that report and route it to the designated owner without asking an analyst to adjudicate service quality.
+
+## Privacy, governance, and limitations
+
+Language and disability-related information can increase reidentification risk in small groups. Limit extracts, suppress small published cells when appropriate, separate linkage files, and set deletion dates. Vendor access and transfer methods should follow approved agreements and security review.
+
+The study misses verbal requests that were never recorded. Vendor logs may use different clocks or identifiers. A completed appointment does not prove effective communication. A missing confirmation can reflect absent service, failed integration, or incomplete documentation. Results from one period may not generalize after staff, vendor, or scheduling changes.
+
+Administrative completeness is not a civil-rights determination. The authoritative guidance helps leaders frame obligations, but a local field set cannot certify them.
+
+## Frequently asked questions
+
+### Is preferred language the same as interpreter requested?
+
+No. Record them separately. A person may state a preferred language without requesting a specific service, and the applicable process may require additional authorized review.
+
+### Can family-member interpretation be marked fulfilled?
+
+Do not invent a universal classification. Preserve what was requested and what occurred, then apply the organization's approved policy and qualified determination. Avoid relabeling an informal arrangement as a qualified service.
+
+### How should cancelled appointments enter the denominator?
+
+Specify whether cancellation occurred before or after an arrangement was required. Show cancellations separately so they do not falsely appear as successful or failed fulfillment.
+
+### What does a vendor confirmation prove?
+
+It proves the vendor issued the recorded acknowledgment for the linked request. It does not prove arrival, identity, competence, effective communication, or satisfaction.
+
+## Conclusion
+
+Interpreter request research is strongest when it preserves separate evidence for stated language, requested modality, appointment linkage, arrangement, and confirmation. Encounter result remains a separate follow-through observation. Bidirectional tracing, occurrence-level matching, and honest null states reveal where the chain breaks without making unsupported claims about communication quality or compliance.
 
 ## Authoritative sources
 
-1. [HHS HIPAA privacy guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/index.html)
-2. [HHS individual access guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html)
-3. [HHS HIPAA security guidance](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html)
-4. [SAMHSA data resources](https://www.samhsa.gov/data)
-5. [NIMH mental health statistics](https://www.nimh.nih.gov/health/statistics/mental-illness)
-6. [AHRQ care coordination resources](https://www.ahrq.gov/ncepcr/care/coordination.html)
-7. [CMS interoperability resources](https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability)
-8. [NIST Privacy Framework](https://www.nist.gov/privacy-framework)
-9. [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
-10. [ADA effective communication guidance](https://www.ada.gov/resources/effective-communication/)
-
-These ten sources were reviewed on 2026-10-13. Their original scope remains controlling, and the study should not extend a source beyond what its issuing authority supports. In the evidence completeness in interpreter request administration procedure, the exception packet uses a dedicated interpreter requests field set so reviewers can distinguish this control from adjacent practice work.
+1. [HHS OCR, Limited English Proficiency Resources](https://www.hhs.gov/civil-rights/for-individuals/special-topics/limited-english-proficiency/index.html)
+2. [ADA.gov, Effective Communication](https://www.ada.gov/resources/effective-communication/)
+3. [HHS HIPAA Privacy Guidance](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/index.html)
+4. [HHS HIPAA Security Guidance](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html)
+5. [AHRQ, Care Coordination](https://www.ahrq.gov/ncepcr/care/coordination.html)
+6. [NIST Privacy Framework](https://www.nist.gov/privacy-framework)
+7. [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+8. [ONC, Patient Access to Health Records](https://www.healthit.gov/topic/patient-access-health-records)
+9. [HHS OCR, HIPAA for Professionals](https://www.hhs.gov/hipaa/for-professionals/index.html)
+10. [45 CFR 164.312, Technical safeguards](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312)

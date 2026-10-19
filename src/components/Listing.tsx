@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import type { ContentItem } from '@/lib/content';
-import { h2Headings } from '@/lib/content';
+import { contentHeadings } from '@/lib/content';
 import { articles } from '@/lib/articles';
 import { researchItems } from '@/lib/research';
 import { alternatives } from '@/lib/alternatives';
-import { Breadcrumbs, KeyTakeaways, RelatedCards, TableOfContents } from './Content';
+import { Breadcrumbs, KeyTakeaways, RelatedCards } from './Content';
 import { MarkdownBody } from './MarkdownBody';
-import { LeadForm } from './LeadForm';
-import { ReviewCarousel } from './ReviewCarousel';
+import { EditorialToc } from './EditorialToc';
 import { ClosingCTA } from './Layout';
 import { breadcrumbSchema, contentSchema } from '@/lib/schema';
 
@@ -63,10 +62,9 @@ export function ContentDetail({ item }: { item: ContentItem }) {
       <KeyTakeaways items={item.keyTakeaways} />
       <div className="article-grid">
         <div className="prose"><MarkdownBody source={item.body} /></div>
-        <aside className="article-sidebar">
-          <TableOfContents items={h2Headings(item.body)} />
-          <div className="sidebar-form"><h2>Discuss your camera workflow</h2><p>Share your priorities and questions with our team.</p><LeadForm placement="article-sidebar" /></div>
-          <ReviewCarousel reviews={item.testimonial ? [item.testimonial as never] : null} />
+        <aside className="article-sidebar" aria-label="Article navigation and practice resources">
+          <EditorialToc items={contentHeadings(item.body)} />
+          <div className="sidebar-support"><p className="eyebrow">Practice desk support</p><h2>Turn guidance into a bounded workflow</h2><p>Review nonclinical administration scopes, decision boundaries, and the inputs needed for a responsible handoff.</p><ul><li><Link href="/services">Explore administrative services</Link></li><li><Link href="/resources">Browse the resource library</Link></li><li><Link href="/contact-us">Book a Free Consultation</Link></li></ul></div>
         </aside>
       </div>
       <div className="tags" aria-label="Article tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>

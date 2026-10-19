@@ -4,19 +4,21 @@ import { researchItems } from '../src/lib/research';
 import { alternatives } from '../src/lib/alternatives';
 
 describe('content launch corpus', () => {
-  it('loads exactly five launch blog articles', () => {
-    expect(articles).toHaveLength(5);
-    expect(new Set(articles.map((item) => item.slug)).size).toBe(5);
+  it('loads all reviewed blog articles with unique slugs and categories', () => {
+    expect(articles).toHaveLength(29);
+    expect(new Set(articles.map((item) => item.slug)).size).toBe(29);
+    expect(articles.every((item) => Boolean(item.category))).toBe(true);
   });
 
-  it('loads twenty research articles in four balanced clusters', () => {
-    expect(researchItems).toHaveLength(20);
+  it('loads all reviewed research articles with unique slugs and clusters', () => {
+    expect(researchItems).toHaveLength(30);
+    expect(new Set(researchItems.map((item) => item.slug)).size).toBe(30);
     const counts = researchItems.reduce<Record<string, number>>((all, item) => {
       all[item.cluster || 'missing'] = (all[item.cluster || 'missing'] || 0) + 1;
       return all;
     }, {});
-    expect(Object.keys(counts)).toHaveLength(4);
-    expect(Object.values(counts)).toEqual([5, 5, 5, 5]);
+    expect(Object.keys(counts).length).toBeGreaterThanOrEqual(4);
+    expect(counts).not.toHaveProperty('missing');
   });
 
   it('loads four alternatives in two non-singleton categories', () => {

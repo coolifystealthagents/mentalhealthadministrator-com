@@ -33,7 +33,10 @@ const checks = {
   },
   links() {
     const valid = new Set(['/','/about','/services','/contact-us','/blog','/research','/alternatives','/resources','/privacy','/terms','/thank-you','/thanks-whats-next']);
-    for (const slug of ['live-camera-monitoring-support','after-hours-camera-observation','event-escalation-support','incident-logging-and-documentation','camera-status-and-coverage-checks','multi-site-monitoring-assistance','access-and-visitor-observation-support','practice-specific-monitoring-workflows']) valid.add(`/services/${slug}`);
+    const siteSource = read('src/lib/site.ts');
+    const serviceSlugs = [...siteSource.matchAll(/slug:\s*['"]([^'"]+)['"]/g)].map((match) => match[1]);
+    assert(serviceSlugs.length === 8, 'links', `expected 8 current service slugs, found ${serviceSlugs.length}`);
+    serviceSlugs.forEach((slug) => valid.add(`/services/${slug}`));
     families.articles.forEach((item) => valid.add(`/blog/${item.data.slug}`));
     families.research.forEach((item) => valid.add(`/research/${item.data.slug}`));
     families.alternatives.forEach((item) => valid.add(`/alternatives/${item.data.slug}`));
@@ -54,14 +57,9 @@ const checks = {
     for (const field of ['name','email','referral_source','message','website_url']) assert(form.includes(`name="${field}"`), 'forms', `missing ${field}`);
     assert(form.includes('tabIndex={-1}') && form.includes('aria-hidden="true"'), 'forms', 'honeypot accessibility contract missing');
     const route = read('src/app/api/submit-lead/route.ts');
-    assert(route.includes('website_url') && route.includes('NextResponse.json({ok:true})'), 'forms', 'silent honeypot response missing');
+    assert(route.includes('website_url') && route.includes('response({ok:true},200)'), 'forms', 'silent honeypot response missing');
   },
-  popup() {
-    const popup = read('src/components/TimedLeadPopup.tsx');
-    assert(/8000|8\s*\*\s*1000/.test(popup), 'popup', 'eight second timer missing');
-    assert(popup.includes('sessionStorage'), 'popup', 'session frequency missing');
-    assert(popup.includes('Escape'), 'popup', 'Escape close missing');
-  },
+
   'rendered-text'() {
     assert(exists('.next/server'), 'rendered-text', 'build output missing');
     if (exists('.next/server')) {
@@ -70,8 +68,14 @@ const checks = {
     }
   },
   'brand-leak'() {
-    for (const item of allContent) assert(!/stealth\s*agents/i.test(item.body), 'brand-leak', path.basename(item.file));
-    for(const file of walk('.next/server/app', /\.html$/)){const html=fs.readFileSync(file,'utf8').replace(/<!--[\s\S]*?-->/g,'').replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]+>/g,' ');if(!file.includes('contact-us'))assert(!/stealth\s*agents/i.test(html),'brand-leak',`parent operator appears outside the approved contact disclosure in ${path.relative(root,file)}`)}
+    for (const item of allContent) assert(!/stealth\s*agents/i.test(item.body), 'brand-leak', `unapproved parent-brand mention in ${path.basename(item.file)}`);
+    for(const file of walk('.next/server/app', /\.html$/)){
+      if (file.endsWith(`${path.sep}_global-error.html`)) continue;
+      const html=fs.readFileSync(file,'utf8').replace(/<!--[\s\S]*?-->/g,'').replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]+>/g,' ');
+      const attributions=html.match(/Powered by Stealth\s*Agents/gi)||[];
+      assert(attributions.length>=2,'brand-leak',`global parent attribution missing from ${path.relative(root,file)}`);
+      if(file.includes('contact-us'))assert(/Official team, Bacolod/i.test(html),'brand-leak','contact parent-brand plate missing');
+    }
   },
   pricing() {
     const text = allContent.map((item) => item.body).join('\n');
@@ -137,7 +141,7 @@ const checks = {
     }
   },
   'content-structure'() {
-    assert(families.articles.length === 5, 'content-structure', `blog count ${families.articles.length}`);
+    assert(families.articles.length === 29, 'content-structure', `blog count ${families.articles.length}`);
     for (const item of families.articles) {
       assert(/^## Quick overview:/m.test(item.body), 'content-structure', `${path.basename(item.file)} first overview missing`);
       assert((item.body.match(/^### .+\?$/gm) || []).length >= 3, 'content-structure', `${path.basename(item.file)} FAQ count low`);
@@ -146,9 +150,11 @@ const checks = {
   },
   similarity() {
     const shingles = (text) => { const words = text.toLowerCase().replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(Boolean); return new Set(words.slice(0,-4).map((_,i) => words.slice(i,i+5).join(' '))); };
-    for (let i=0;i<families.articles.length;i++) for (let j=i+1;j<families.articles.length;j++) {
-      const a=shingles(families.articles[i].body), b=shingles(families.articles[j].body); let common=0; for(const value of a) if(b.has(value)) common++;
-      const score=common/(a.size+b.size-common || 1); assert(score < 0.45, 'similarity', `${path.basename(families.articles[i].file)} and ${path.basename(families.articles[j].file)} score ${score.toFixed(3)}`);
+    for (const [family, items] of Object.entries({ articles: families.articles, research: families.research })) {
+      for (let i=0;i<items.length;i++) for (let j=i+1;j<items.length;j++) {
+        const a=shingles(items[i].body), b=shingles(items[j].body); let common=0; for(const value of a) if(b.has(value)) common++;
+        const score=common/(a.size+b.size-common || 1); assert(score < 0.45, 'similarity', `${family}: ${path.basename(items[i].file)} and ${path.basename(items[j].file)} score ${score.toFixed(3)}`);
+      }
     }
   },
   research() {

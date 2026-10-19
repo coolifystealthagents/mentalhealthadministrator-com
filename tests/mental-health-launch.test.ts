@@ -1,5 +1,5 @@
 import {describe,expect,it} from 'vitest';
-import {readFileSync,readdirSync} from 'node:fs';
+import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import path from 'node:path';
 import {services,DOMAIN,SITE_NAME,basePaths,sitemapPaths} from '../src/lib/site';
 import {articles} from '../src/lib/articles';
@@ -15,8 +15,9 @@ describe('mental health administrator launch contract',()=>{
   expect(services).toHaveLength(8); expect(basePaths).toHaveLength(10); expect(sitemapPaths).toHaveLength(18);
  });
  it('loads the complete editorial corpus',()=>{
-  expect(corpus('content/articles')).toHaveLength(5); expect(corpus('content/research')).toHaveLength(20); expect(corpus('content/alternatives')).toHaveLength(4);
-  expect(articles).toHaveLength(5); expect(researchItems).toHaveLength(20); expect(alternatives).toHaveLength(4);
+  expect(corpus('content/articles')).toHaveLength(29); expect(corpus('content/research')).toHaveLength(30); expect(corpus('content/alternatives')).toHaveLength(4);
+  expect(articles).toHaveLength(29); expect(researchItems).toHaveLength(30); expect(alternatives).toHaveLength(4);
+  expect(new Set(articles.map(item=>item.slug)).size).toBe(29); expect(new Set(researchItems.map(item=>item.slug)).size).toBe(30);
  });
  it('defines the practice desk design rather than reference styling',()=>{
   const css=read('src/app/globals.css');
@@ -30,12 +31,18 @@ describe('mental health administrator launch contract',()=>{
   expect(all).not.toMatch(/guarantee(?:d)? outcomes|we are hipaa compliant|improve clinical outcomes/);
  });
  it('uses the exact form warning, funnel source, and fail closed delivery',()=>{
-  const form=read('src/components/LeadForm.tsx'); expect(form).toContain('Do not include client names, diagnoses, appointment details, or other protected health information.'); expect(form).toContain('mentalhealthadministrator.com');
-  const api=read('src/app/api/submit-lead/route.ts'); expect(api).toContain("source:'mentalhealthadministrator.com'"); expect(api).toContain('status:503');
+  const form=read('src/components/LeadForm.tsx'); expect(form).toContain('Do not include client names, diagnoses, appointment details, or other protected health information.');
+  const api=read('src/app/api/submit-lead/route.ts'); expect(api).toContain('mentalhealthadministrator.com:'); expect(api).toContain("source:'mentalhealthadministrator.com'"); expect(api).toContain("return response({ok:false,error:'Delivery is temporarily unavailable. Please try again.'},502)");expect(api).toContain("return response({ok:false,error:'Delivery is temporarily unavailable. Please try again.'},503)"); expect(api).toContain("event_type:'lead_submit'");
  });
  it('contains no stale parent identity or prohibited dash characters in visitor source',()=>{
   const dirs=['src','content']; const files:string[]=[];
   const walk=(p:string)=>{for(const e of readdirSync(path.join(root,p),{withFileTypes:true})){const r=path.join(p,e.name);if(e.isDirectory())walk(r);else if(/\.(tsx?|mdx|css)$/.test(e.name))files.push(r)}}; dirs.forEach(walk);
-  for(const file of files){const text=read(file);expect(text,`${file} stale brand`).not.toMatch(/Security Monitoring Service|securitymonitoringservice\.com/);expect(text,`${file} prohibited dash`).not.toMatch(/[\u2014\u2013]/)}
+  for(const file of files){const text=read(file);expect(text,`${file} stale brand`).not.toMatch(/Security Monitoring Service|securitymonitoringservice\.com|licensed guards|police dispatch|onsite security|control-room photograph|Monitoring workflow alternatives|Monitoring Alternatives/i);expect(text,`${file} prohibited dash`).not.toMatch(/[\u2014\u2013]/)}
+ });
+ it('uses the folio mark as the favicon and gives static indexable routes self-canonicals',()=>{
+  expect(existsSync(path.join(root,'src/app/icon.svg'))).toBe(true);
+  const icon=read('src/app/icon.svg');
+  expect(icon).toContain('M7 10c7-2 13 0 17 5 4-5 10-7 17-5v25c-7-2-13 0-17 5-4-5-10-7-17-5V10Z');
+  for(const [file,canonical] of [['src/app/about/page.tsx','/about'],['src/app/services/page.tsx','/services'],['src/app/privacy/page.tsx','/privacy'],['src/app/terms/page.tsx','/terms']] as const)expect(read(file),file).toContain(`alternates:{canonical:'${canonical}'}`);
  });
 });
