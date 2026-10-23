@@ -7,6 +7,7 @@ import { alternatives } from '@/lib/alternatives';
 import { Breadcrumbs, KeyTakeaways, RelatedCards } from './Content';
 import { MarkdownBody } from './MarkdownBody';
 import { EditorialToc } from './EditorialToc';
+import { MobileToc } from './MobileToc';
 import { ClosingCTA } from './Layout';
 import { breadcrumbSchema, contentSchema } from '@/lib/schema';
 
@@ -61,6 +62,7 @@ export function ContentDetail({ item }: { item: ContentItem }) {
       </header>
       <KeyTakeaways items={item.keyTakeaways} />
       <div className="article-grid">
+        <MobileToc items={contentHeadings(item.body)} />
         <div className="prose"><MarkdownBody source={item.body} /></div>
         <aside className="article-sidebar" aria-label="Article navigation and practice resources">
           <EditorialToc items={contentHeadings(item.body)} />
