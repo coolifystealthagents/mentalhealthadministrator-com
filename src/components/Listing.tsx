@@ -55,7 +55,7 @@ export function ContentDetail({ item }: { item: ContentItem }) {
         <p className="eyebrow">{item.category}</p>
         <h1>{item.pageH1 || item.title}</h1>
         <p className="lede">{item.description}</p>
-        <p className="fine">Published {item.publishedAt} · Updated {item.updatedAt} · {item.readingTime} · {item.author}</p>
+        <p className="fine">Published <time dateTime={item.publishedAt}>{new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(`${item.publishedAt}T00:00:00Z`))}</time> · Updated {item.updatedAt} · {item.readingTime} · {item.author}</p>
         {item.kind === 'research' && <p className="research-badge">Sources: {item.sourceCount} · Last verified: {item.lastVerified}</p>}
         <img className="article-hero" src={item.featuredImage} alt={item.heroImageAlt} />
       </header>
