@@ -1,0 +1,106 @@
+---
+slug: "how-long-do-records-requests-wait-before-review-for-the-quarter-start-review"
+title: "How long do records requests wait before review for the quarter-start review?"
+seoTitle: "How long do records requests wait before review for the quarter-start review?"
+pageH1: "How long do records requests wait before review for the quarter-start review?"
+excerpt: "A queue-aging method for records requests that separates time waiting on the practice from time waiting on the requester."
+author: "Mental Health Administrator Editorial Team"
+publishedAt: "2026-11-07"
+updatedAt: "2026-11-07"
+category: "Practice operations research"
+cluster: "mental health administration"
+tags:
+  - "mental health administration"
+  - "operational research"
+  - "records requests"
+featuredImage: "/blog/how-long-do-records-requests-wait-before-review-for-the-quarter-start-review.webp"
+heroImageAlt: "Research photograph for How long do records requests wait before review for the quarter-start review?"
+readingTime: "10 minutes"
+sourceCount: 10
+lastVerified: "2026-11-07"
+key_takeaways:
+  - "Measure request age in work states so waiting on the requester is not counted as practice delay."
+  - "Report the oldest open request beside the median because the tail drives compliance risk."
+  - "Use the received date and the applicable response rule to set the deadline field."
+keyStats:
+  - "Median and maximum age of open records requests at the review date."
+  - "Share of requests waiting on the practice rather than on the requester or legal review."
+relatedSlugs: []
+---
+
+
+## Question and scope
+
+This review asks how long open records requests wait before a reviewer acts, and how much of that time is attributable to the practice. The question is about queue age and work state, not about whether a particular release was correct. A request can be handled properly and still take too long, and a fast release can still be wrong. Separating speed from correctness keeps the review focused on the administrative process.
+
+The scope should name the request types included: client requests for their own record, third-party requests with authorization, legal requests, and internal requests. Legal requests often follow a different path and should be reported separately. A combined rate can hide a legal queue that is working well and a routine queue that is not. State the categories before the sample is drawn.
+
+Choose the observation date and time, and record the practice's time zone. A request received late on a Friday may age over a weekend that the practice does not count as business time. Decide whether the measure uses calendar days or business days and apply it consistently. The report should give the reader enough information to recalculate the age.
+
+## Population and unit of analysis
+
+The population is every request that was open at any point in the window. The unit is one request tied to one requester and one scope. If a request is amended to add records, decide whether the amendment is a new unit or part of the original, and record the rule. A reopened request after a denial is usually a new cycle, but the earlier cycle should remain visible.
+
+Exclude requests that were withdrawn before any review, and record the withdrawal date. Include requests that were closed and reopened inside the window if the practice wants to measure repeat work. Include requests that are waiting on the requester, but report them in a separate state. Excluding them entirely can make the practice look faster than it is, while blending them can make it look slower.
+
+Stratify by request type, requester relationship, and assigned reviewer. A request from a client may move faster than a third-party request that needs authorization verification. A request assigned to a reviewer with a full queue may wait longer than one assigned to an available reviewer. The strata should be reported with counts and with a caution where the group is small.
+
+## Definitions and measures
+
+Define the start event as the date the practice received the request through an approved channel. Define the review event as the first substantive action by a reviewer, such as confirming the authorization or starting the scope review. Define closure as the date the response was sent or the request was documented as denied with a reason. Do not use the date the request appeared in a queue view if it differs from the receipt date.
+
+Define work states clearly: awaiting practice review, awaiting requester information, awaiting legal review, and ready to release. Time in awaiting requester and awaiting legal review is not the same as time awaiting practice review. The primary measure is the age of requests in the practice-controlled states. Report the other states for context, but do not let them dilute the measure the practice can act on.
+
+Report the median, the ninetieth percentile, and the maximum age. The maximum is important because a single very old request can create a compliance exposure that an average hides. Also report the count of requests past the internal target and the count with no reviewer assigned. A request with no reviewer is a special kind of delay because nobody is responsible for moving it.
+
+## Data sources and collection
+
+Use the request log for receipt, assignment, state changes, and closure. Use the authorization record to confirm whether a request was complete. If the log does not record state changes, the review can reconstruct some of them from notes, but it should label the result as approximate. A reconstructed timeline is useful for direction but weaker than a logged one.
+
+Export the log at the observation time and keep the export with the review. If the log changes later, the original snapshot remains the evidence. Record the field names used for each event so a second reviewer can repeat the extraction. A field that means different things to different staff will produce a misleading age.
+
+Use a pseudonymous key and keep the crosswalk restricted. The review file should not include the content of the records or the reason for the request. Record the request type, the receipt date, the state, the assigned role, and the closure date. The finding is about the queue, not about the merits of any request.
+
+## Evidence standard
+
+A date counts as evidence when it comes from the request log or from a dated receipt or response. A note written later that says the request was received on a certain date is weaker unless it points to the original document. The review should prefer the earliest reliable record and note when it had to reconstruct a date. Precision should be reported honestly.
+
+When a request is marked closed, the review should confirm that a response exists. A status change without a response is not a closure for the purpose of the age measure. If the response was a denial, the denial letter or note should be in the record. A closure that cannot be supported is a finding about the log, and it should be reported rather than corrected silently.
+
+State what the review does not measure. It does not measure the quality of the redaction or the legal sufficiency of a denial. It does not determine whether the practice met every applicable deadline, because the rule may depend on the request type and jurisdiction. The review measures queue age and work state. A compliance determination requires a separate legal review.
+
+## Analysis and reporting
+
+Report the age distribution for each request type and work state. Show the median, ninetieth percentile, and maximum, along with the count past the internal target. Report the share of open requests with no assigned reviewer. That share is often the clearest signal of a queue that has lost ownership rather than a queue that is merely busy.
+
+Break the result down by reviewer role and by week of receipt. A cluster of old requests from one week may point to a staffing gap or a process change. A cluster assigned to one role may point to an access problem or an unclear scope. The pattern should be described with counts, and a small group should not be treated as a stable rate.
+
+Write a short interpretation that identifies the state where the practice loses the most time. If the delay is in awaiting practice review, the fix may be a daily triage or a clearer scope checklist. If the delay is in awaiting requester information, the fix may be a better first response or a reminder. The report should recommend one change and name the measure that will show whether it worked.
+
+## Limits and sources of error
+
+The largest source of error is a request log that records only the current state. Without state history, the review cannot tell whether a request waited on the practice or on the requester. The finding should say the measure is approximate and the practice should add state timestamps before the next cycle. A simple state field with a date is often enough.
+
+A second error is a deadline calculated from the wrong start date. A request received by fax but logged a day later may appear younger than it is. The review should compare the receipt document with the log entry for a sample. If the gap is common, the practice should record the source document date at intake. A deadline built on the log date alone may understate the age.
+
+A third error is a scope that changes after the request is opened. An amended request may restart work without resetting the age field, or it may reset the age without preserving the original. Decide which rule the practice uses and keep the original request visible. The report should show both the original receipt age and the current scope age when they differ.
+
+## Review cadence
+
+Run the review at quarter start and after any change to the request log or the intake form. Keep the work-state definitions stable so the comparison is meaningful. If the practice changes its log, treat the first cycle after the change as a new baseline. A longer history built on different definitions is less useful than a short, consistent series.
+
+Assign the review to the privacy lead and a backup. The reviewer should be able to export the log and confirm a sample of closures without waiting for a vendor. Document the export path and the fields used. A review that depends on one person's access is easy to postpone and hard to defend.
+
+Close each cycle with one change and a follow-up date. The change might be a required reviewer at intake, a daily unassigned list, or a state timestamp. At the next cycle, check the same state and the same percentile. If the change did not move the number, inspect whether the state field is being used as designed before adding another report.
+## Sources
+
+- Substance Abuse and Mental Health Services Administration: https://www.samhsa.gov/
+- U.S. Department of Health and Human Services: https://www.hhs.gov/
+- HHS Office for Civil Rights, HIPAA: https://www.hhs.gov/hipaa/
+- HHS Office for Civil Rights, right of access: https://www.hhs.gov/hipaa/for-individuals/guidance-materials-for-consumers/index.html
+- Centers for Medicare and Medicaid Services: https://www.cms.gov/
+- Agency for Healthcare Research and Quality: https://www.ahrq.gov/
+- National Institute of Mental Health: https://www.nimh.nih.gov/
+- NIST Privacy Framework: https://www.nist.gov/privacy-framework
+- Federal Trade Commission, health privacy: https://www.ftc.gov/business-guidance/privacy-security/health-privacy
+- National Archives, records management: https://www.archives.gov/records-mgmt

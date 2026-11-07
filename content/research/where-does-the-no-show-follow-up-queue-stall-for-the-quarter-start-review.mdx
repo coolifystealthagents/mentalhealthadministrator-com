@@ -1,0 +1,106 @@
+---
+slug: "where-does-the-no-show-follow-up-queue-stall-for-the-quarter-start-review"
+title: "Where does the no-show follow-up queue stall for the quarter-start review?"
+seoTitle: "Where does the no-show follow-up queue stall for the quarter-start review?"
+pageH1: "Where does the no-show follow-up queue stall for the quarter-start review?"
+excerpt: "A measurement plan for finding the step where no-show outreach loses time, using timestamps instead of impressions."
+author: "Mental Health Administrator Editorial Team"
+publishedAt: "2026-11-07"
+updatedAt: "2026-11-07"
+category: "Practice operations research"
+cluster: "mental health administration"
+tags:
+  - "mental health administration"
+  - "operational research"
+  - "no-show follow-up"
+featuredImage: "/blog/where-does-the-no-show-follow-up-queue-stall-for-the-quarter-start-review.webp"
+heroImageAlt: "Research photograph for Where does the no-show follow-up queue stall for the quarter-start review?"
+readingTime: "10 minutes"
+sourceCount: 10
+lastVerified: "2026-11-07"
+key_takeaways:
+  - "Time each step from appointment end to first outreach, not from the day the note was written."
+  - "Separate waiting on the practice from waiting on the client or the payer."
+  - "Inspect the longest cases individually before trusting an average."
+keyStats:
+  - "Median and p90 hours from missed appointment to first documented outreach."
+  - "Share of no-show cases waiting on the practice at the review close."
+relatedSlugs: []
+---
+
+
+## Question and scope
+
+This review asks where a no-show follow-up queue loses time between the end of a missed appointment and the first documented outreach to the client. The question is about elapsed time and ownership, not about why the client missed the visit. A practice can improve the queue without knowing the clinical reason for an absence, and it should avoid turning an operations review into a judgment about the client. The output is a process finding that names the step where time accumulates.
+
+The scope should name the service lines, clinicians, and date range. Decide whether the review covers only initial appointments, only follow-ups, or both. The two may have different scheduling rules and different outreach expectations. Mixing them without a stratum can hide a problem that affects one group and not the other. State the rule before the sample is drawn.
+
+Choose the observation date carefully. A queue reviewed on a Monday may look different from the same queue reviewed on a Friday. Record the time of the export and the time zone used for every timestamp. A mismatch between the scheduling system and the outreach log can create hours of apparent delay that never happened. The review should name the clock it trusts.
+
+## Population and unit of analysis
+
+The population is every missed appointment inside the window that triggered a follow-up task under the practice's written rule. The unit is one appointment and its linked outreach sequence. If the client missed two appointments in the window, count two units and link them only when the review is examining a pattern. A linked view is useful, but it should not replace the appointment-level denominator.
+
+Exclude appointments that were cancelled in advance, because they follow a different workflow. Exclude appointments that were rescheduled before the start time if the practice treats them as a schedule change rather than a no-show. Document each exclusion and the number excluded. A review that silently drops cancelled visits can overstate the no-show rate and mislead the queue design.
+
+Stratify by service, clinician, day of week, and whether the appointment was in person or by video. A telehealth no-show may produce a different outreach path because the client did not travel. A Friday afternoon cluster may reflect coverage rather than client behavior. The strata should be reported even when the sample is too small to support a strong conclusion.
+
+## Definitions and measures
+
+Define the start event as the scheduled end time of the missed appointment. Define the stop event as the first documented outreach attempt through any approved channel. Do not use the time the note was typed if the contact happened earlier, and do not use the time the task was created if the outreach happened later. The measure should reflect the client-facing event, not the software event.
+
+Define what counts as an attempt. A call that rings without an answer, a secure message, and a letter can all be attempts if the practice's policy allows them. A note that says will call tomorrow is a plan, not an attempt. Record the channel and the outcome for each attempt so the review can separate a first contact from a later one. The primary measure is the elapsed time to the first true attempt.
+
+Report the median and the ninetieth percentile, not only the mean. A few very late cases can pull a mean away from the typical experience. Report the oldest open case and the number of cases that had no attempt recorded at the close of the window. Those tail measures show where the queue is actually stuck. A single median can make a long tail invisible.
+
+## Data sources and collection
+
+Use the scheduling system for the appointment end time and the outreach log for the attempt timestamp. If the two systems use different time zones, normalize both to a single zone before calculating elapsed time. Keep the raw timestamps in the review file so a second reviewer can check the conversion. A time zone error can create or erase a day of delay.
+
+The outreach log may record only the final outcome, not each attempt. If so, the review can still measure time to first recorded attempt, but it should label the result as a lower-bound or an imprecise measure. Ask whether the phone system keeps a separate call log that can fill the gap. Combining sources is acceptable when each source is identified and the matching rule is written down.
+
+Use a pseudonymous identifier and keep the crosswalk in a restricted system. The review file should not include the content of clinical sessions or the reason for the missed appointment. Record the appointment type, the clinician role, and the outreach channel. The goal is to understand the queue, not to build a client profile.
+
+## Evidence standard
+
+A timestamp counts as evidence only when it comes from a system that records the event automatically or from a note written at the time of the event. A retrospective summary such as called last week is weaker because the exact time is unknown. The review can include such cases but should mark the precision. A mix of precise and approximate timestamps should be reported as a mix, not averaged into a false precision.
+
+When the queue is challenged, the defense is the export, the inclusion rule, and the timestamp source. Keep the export with the review file and note any manual corrections. A correction should be dated and attributed, not silently applied. If a case is removed because it was a cancellation, keep the exclusion list. The evidence should let a skeptical reader rebuild the finding.
+
+State what the review does not measure. It does not measure client satisfaction, clinical engagement, or the quality of the outreach conversation. It does not prove that faster outreach improves outcomes, although faster contact is generally easier to act on. The finding is about process delay. Keeping that limit visible prevents the result from being used to make a claim the data cannot support.
+
+## Analysis and reporting
+
+Report the time to first attempt as a distribution, with the count, median, and ninetieth percentile. Report the share of cases with no attempt at the close of the window. Break the result down by the strata chosen before collection, and show the counts beside each rate so a small group is not overread. A rate from six cases is a prompt for a conversation, not a stable estimate.
+
+Compute the waiting time by responsible party where the log allows it. Time waiting on the practice is different from time waiting on a client reply or a payer response. The practice can act on its own waiting time immediately. The other categories are useful for context but should not be blended into a single delay number. A blended number often makes the practice look both better and worse than it is.
+
+Write a short interpretation that names the step where the largest share of elapsed time accumulates. If the delay is between the missed appointment and task creation, the scheduling handoff is the likely place to look. If the delay is between task creation and first attempt, the outreach queue or staffing is the likely place. The report should point to one step and one measurable change.
+
+## Limits and sources of error
+
+The most common error is a timestamp that records the note rather than the event. A coordinator who documents three calls at the end of the day creates a cluster of attempts that looks later than it was. The review should ask how the log is used and whether real-time entry is expected. If it is not, the elapsed-time measure should be described as approximate.
+
+A second error is an unstable definition of a no-show. Scheduling systems may label a late cancellation, a technology failure, and a true absence in similar ways. Review a sample of labels against the notes and record the disagreement rate. If the labels are unreliable, the population is uncertain and the finding should say so. A precise calculation on an imprecise population is still imprecise.
+
+The queue may also be affected by factors outside the practice, such as a client's transportation or work schedule. The review should not attribute those factors to staff performance. Use the result to redesign the process, not to rank individuals. A process view makes the next review more honest and more likely to produce a change people will support.
+
+## Review cadence
+
+Run the review at quarter start and again after any significant change to scheduling or outreach. Keep the same definitions for at least two cycles before deciding whether a change worked. If the practice changes its scheduling system, rebuild the baseline and label the break in the series. Comparability is more valuable than a longer history built on different methods.
+
+Assign the review to the person who owns the outreach queue and a backup who can export the same data. The backup should run one cycle so the method is not dependent on a single schedule. Record the export time, the definitions, and the exclusions in a short methods note. The next reviewer should be able to start from that note rather than from memory.
+
+Close each cycle with one change and a date to check it. The change should target the step where the delay accumulated, not the overall queue. At the next cycle, compare the same percentile and the same tail measure. If the change did not move the number, inspect whether it was implemented as designed before replacing it with a new idea.
+## Sources
+
+- Substance Abuse and Mental Health Services Administration: https://www.samhsa.gov/
+- U.S. Department of Health and Human Services: https://www.hhs.gov/
+- HHS Office for Civil Rights, HIPAA: https://www.hhs.gov/hipaa/
+- Centers for Medicare and Medicaid Services: https://www.cms.gov/
+- Agency for Healthcare Research and Quality: https://www.ahrq.gov/
+- National Institute of Mental Health: https://www.nimh.nih.gov/
+- NIST Privacy Framework: https://www.nist.gov/privacy-framework
+- Federal Trade Commission, health privacy: https://www.ftc.gov/business-guidance/privacy-security/health-privacy
+- U.S. Bureau of Labor Statistics: https://www.bls.gov/
+- National Archives, records management: https://www.archives.gov/records-mgmt

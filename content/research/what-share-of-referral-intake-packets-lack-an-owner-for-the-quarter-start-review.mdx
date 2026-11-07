@@ -1,0 +1,106 @@
+---
+slug: "what-share-of-referral-intake-packets-lack-an-owner-for-the-quarter-start-review"
+title: "What share of referral intake packets lack an owner for the quarter-start review?"
+seoTitle: "What share of referral intake packets lack an owner for the quarter-start review?"
+pageH1: "What share of referral intake packets lack an owner for the quarter-start review?"
+excerpt: "A reproducible review of referral ownership that measures the gap between arrival, assignment, and first contact."
+author: "Mental Health Administrator Editorial Team"
+publishedAt: "2026-11-07"
+updatedAt: "2026-11-07"
+category: "Practice operations research"
+cluster: "mental health administration"
+tags:
+  - "mental health administration"
+  - "operational research"
+  - "referral intake"
+featuredImage: "/blog/what-share-of-referral-intake-packets-lack-an-owner-for-the-quarter-start-review.webp"
+heroImageAlt: "Research photograph for What share of referral intake packets lack an owner for the quarter-start review?"
+readingTime: "10 minutes"
+sourceCount: 10
+lastVerified: "2026-11-07"
+key_takeaways:
+  - "Measure ownership at a fixed snapshot after arrival, not only at the moment of intake."
+  - "Report unassigned referrals beside time to first contact to show the consequence."
+  - "Separate a packet that is unowned from one that is owned but waiting on information."
+keyStats:
+  - "Share of referral packets with no named owner at the daily close."
+  - "Median business days from referral receipt to first documented contact."
+relatedSlugs: []
+---
+
+
+## Question and scope
+
+This review asks what share of referral intake packets lack a named owner at a fixed point after arrival, and how that gap relates to the time before first client contact. The question is about accountability in the intake queue, not about the clinical suitability of the referral. A packet can be clinically appropriate and still sit unowned for days, which is the process failure this review is designed to reveal. The finding should help the practice decide where to place an ownership check.
+
+The scope should name the referral sources, the service lines, and the window. Decide whether the review includes referrals that arrived after hours or only those received during business hours. After-hours referrals often have a different assignment path, and excluding them can make ownership look better than it is. State the inclusion rule and the number of packets in each group.
+
+Choose the snapshot time in advance. A packet that is unowned at noon on the day it arrives may be assigned by the end of the day, which is normal. A packet that is still unowned at the close of the next business day is a different finding. The review should report both the same-day assignment rate and the next-day rate so the reader can see the difference.
+
+## Population and unit of analysis
+
+The population is every referral packet received inside the window that met the practice's intake criteria. The unit is one packet tied to one client and one referral event. If a client is referred for two services, count two packets and link them. A linked view helps with families and repeat referrals, but the packet remains the unit for the ownership measure.
+
+Exclude duplicate faxes or duplicate portal submissions of the same referral, but keep a count of the duplicates. A duplicate is a process signal because it may mean the first submission was not acknowledged. Exclude packets that were withdrawn by the referral source before intake began, and record the withdrawal date. The exclusion list should be short enough that the denominator remains close to the raw receipt count.
+
+Stratify by referral source, service, and arrival day. A source that sends a complete packet may look different from a source that sends a single page. A Monday arrival may be assigned faster than a Friday arrival because of weekend coverage. The strata should be reported with counts, and a small stratum should be labeled as provisional rather than treated as a stable rate.
+
+## Definitions and measures
+
+Define an owner as the individual named in the intake record who is responsible for the next action. A team name, a shared inbox, or a queue label is not an owner for this measure. If the practice uses a rotation, record the person on rotation at the snapshot time. An owner who is on leave without a named backup counts as a coverage gap, not as ownership.
+
+Define the snapshot as the close of the business day on which the packet arrived, or the close of the next business day for after-hours packets. Record the exact time and the source of the assignment field. If the field is blank but a coordinator says they were handling it, the packet is unowned for the measure unless the record names them. A verbal claim is not a recorded owner.
+
+The primary measure is the share of packets with no named owner at the snapshot. Secondary measures are the share assigned within one business day and the median time from receipt to first documented contact. Report the oldest unowned packet and the number of packets that reached a scheduled intake without an owner. Those tail measures show the practical cost of the gap.
+
+## Data sources and collection
+
+Use the intake tracker for arrival time, assignment, and first contact. Use the referral source document to confirm the arrival date when the tracker is unclear. If the practice receives referrals through more than one channel, export each channel and combine them with a written matching rule. A single-channel export can miss the referrals that are most likely to be unowned.
+
+Freeze the export at the snapshot time and keep it with the review file. Do not refresh the export after assignments change, because that would erase the condition being measured. If a correction is needed, save it as a labeled second file and explain why. The original snapshot is the evidence for the finding and should remain intact.
+
+Use a pseudonymous key and keep the crosswalk restricted. The review file should not include the referral reason or clinical detail. Record the source type, the service, the arrival time, the owner field, and the first-contact time. A short record is easier to audit and less risky to store than a full copy of the referral.
+
+## Evidence standard
+
+An assignment counts as evidence when the tracker shows a named person and a time the assignment was made. A name added later without a timestamp is weaker because the reviewer cannot tell when it appeared. The review can include such records but should mark them as untimed. A finding built on untimed assignments should be described as approximate.
+
+A first contact counts as evidence when there is a dated note, call log entry, or message record. A note that says attempted contact without a date is not enough for the time measure. If the practice uses multiple channels, record the first channel that produced a documented attempt. The review should not infer an attempt from a scheduled task.
+
+State what the review does not measure. It does not measure the quality of the intake conversation or the clinical fit of the referral. It does not prove that a named owner will act faster, although ownership is a precondition for accountability. The finding describes the assignment record and its relationship to first contact. It is not a performance rating for an individual coordinator.
+
+## Analysis and reporting
+
+Report the primary ownership rate with the numerator, denominator, snapshot rule, and window. Report the same-day and next-day assignment rates separately. Report the median and ninetieth percentile time to first contact, and show the ownership rate beside the contact measure. A reader should be able to see whether unowned packets are also the ones that wait longest.
+
+Break the result down by source and arrival day, with counts. If one source accounts for most of the unowned packets, the fix may be a source-specific acknowledgment or a required field at submission. If the gap is spread across sources, the assignment rule itself may be unclear. The pattern should guide the recommendation more than the overall rate alone.
+
+Write a short interpretation that separates a missing owner from a packet that is owned but waiting on information. A packet owned by a coordinator who is waiting for a missing insurance identifier is not the same as a packet nobody has claimed. The report should show both conditions, because the first needs a follow-up rule and the second needs an assignment rule. Mixing them produces the wrong fix.
+
+## Limits and sources of error
+
+The assignment field may be used inconsistently. Some coordinators may claim a packet in the tracker, while others may keep ownership in their own notes. The review should compare the tracker with a sample of actual work to estimate the gap. If the tracker is not the system of record for ownership, the finding should say so and the practice should fix the record before measuring again.
+
+The first-contact measure may be affected by the client rather than the practice. A client who does not answer is not the same as a coordinator who never called. The review should separate attempted contact from successful contact and report both. It should also record the channel, because a message to an outdated number is not a real attempt under the practice's own rule.
+
+The snapshot can create a misleading result if the practice assigns packets in a batch at the end of the day. A packet unowned at 3 p.m. may be assigned at 4:30 p.m., which is still within the same business day. The report should use a snapshot that matches the practice's actual assignment rhythm and state that choice. A different snapshot would produce a different number, and the method should make that visible.
+
+## Review cadence
+
+Run the review at quarter start and after any change to the intake tracker or assignment rotation. Keep the snapshot rule stable across cycles so the comparison is meaningful. If the practice changes its tracker, rebuild the baseline and label the break. A trend built on different snapshot times is not a trend.
+
+Assign the review to the intake supervisor and a backup. The supervisor should be able to export the tracker without asking the vendor for a new report each time. Document the export path and the matching rule. A review that depends on one person's access is hard to repeat and easy to postpone.
+
+Close each cycle with one assignment change and a follow-up date. The change might be a required owner at intake, a daily unowned list, or a named backup for after-hours referrals. At the next cycle, check the same snapshot and the same contact measure. If the change did not move the number, inspect whether the owner field is being used as designed before adding another rule.
+## Sources
+
+- Substance Abuse and Mental Health Services Administration: https://www.samhsa.gov/
+- U.S. Department of Health and Human Services: https://www.hhs.gov/
+- HHS Office for Civil Rights, HIPAA: https://www.hhs.gov/hipaa/
+- Centers for Medicare and Medicaid Services: https://www.cms.gov/
+- Agency for Healthcare Research and Quality: https://www.ahrq.gov/
+- National Institute of Mental Health: https://www.nimh.nih.gov/
+- Health Resources and Services Administration: https://www.hrsa.gov/
+- NIST Privacy Framework: https://www.nist.gov/privacy-framework
+- Federal Trade Commission, health privacy: https://www.ftc.gov/business-guidance/privacy-security/health-privacy
+- U.S. Bureau of Labor Statistics: https://www.bls.gov/

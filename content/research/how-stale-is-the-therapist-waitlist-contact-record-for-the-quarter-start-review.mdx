@@ -1,0 +1,106 @@
+---
+slug: "how-stale-is-the-therapist-waitlist-contact-record-for-the-quarter-start-review"
+title: "How stale is the therapist waitlist contact record for the quarter-start review?"
+seoTitle: "How stale is the therapist waitlist contact record for the quarter-start review?"
+pageH1: "How stale is the therapist waitlist contact record for the quarter-start review?"
+excerpt: "A waitlist freshness review that measures how long contact and availability details have gone without confirmation."
+author: "Mental Health Administrator Editorial Team"
+publishedAt: "2026-11-07"
+updatedAt: "2026-11-07"
+category: "Practice operations research"
+cluster: "mental health administration"
+tags:
+  - "mental health administration"
+  - "operational research"
+  - "waitlist"
+featuredImage: "/blog/how-stale-is-the-therapist-waitlist-contact-record-for-the-quarter-start-review.webp"
+heroImageAlt: "Research photograph for How stale is the therapist waitlist contact record for the quarter-start review?"
+readingTime: "10 minutes"
+sourceCount: 10
+lastVerified: "2026-11-07"
+key_takeaways:
+  - "Age a waitlist record from the last confirmed contact, not from the date it was created."
+  - "Measure availability and contact preference separately because they go stale differently."
+  - "Report the oldest record and the share never refreshed since intake."
+keyStats:
+  - "Median days since the last confirmed contact for open waitlist entries."
+  - "Share of open entries with an availability window older than thirty days."
+relatedSlugs: []
+---
+
+
+## Question and scope
+
+This review asks how stale the contact and availability details are for clients on an open therapist waitlist. Staleness matters because a stale record can send an offer to an old number or a time the client can no longer use. The question is about the record, not about how long the client has waited. Both matter, but they require different measures and different fixes.
+
+The scope should name the service lines, the waitlist types, and the date range. A waitlist for a specific clinician may move faster than a general intake list. A list for a specialty service may have different availability constraints. Mixing them without a stratum can hide a group with much older records. State the categories and the observation date before collecting entries.
+
+Decide whether the review includes entries that were contacted but not offered a slot. Those entries are central to the question because a contact attempt may confirm a number without confirming availability. Include them, and record what was confirmed. An entry that was called but never asked about scheduling is not a refreshed entry for this measure.
+
+## Population and unit of analysis
+
+The population is every open waitlist entry at the observation time. The unit is one client and one waitlist record. If a client appears on two service lists, count two entries and link them. A duplicate entry for the same service is a data quality finding, not a separate unit. Identify duplicates before calculating the age distribution.
+
+Exclude entries that were closed before the observation date, even if they were active during the window. The question is about the current list, not about historical wait times. Include entries with no contact since intake, because those are often the ones most likely to be stale. Record the intake date and the last confirmed contact date for each entry.
+
+Stratify by service, referral source, and whether the entry has ever been offered a slot. An entry that has been offered a slot may have more recent contact than one that has not. A source that sends incomplete contact details may produce more stale records. Report the counts with each stratum and label small groups as provisional.
+
+## Definitions and measures
+
+Define the last confirmed contact as the most recent date on which the practice reached the client and confirmed at least one scheduling detail. A voicemail does not confirm anything. A message that was delivered but not answered does not confirm anything. If the client replied to a message, record the date and what was confirmed. The measure should not count an attempted contact as a refresh.
+
+Measure availability and contact preference separately. Availability includes days, times, modality, and location. Contact preference includes the channel the client wants the practice to use and any fallback the client has approved. A record can have a current phone number and an availability window from six months ago. Reporting one combined freshness score would hide that difference.
+
+The primary measure is the median days since the last confirmed contact for open entries. Secondary measures are the share of entries with availability older than thirty days and the share never refreshed since intake. Report the oldest record and the number of entries with no confirmed contact at all. A long tail is common on waitlists and should be shown rather than averaged away.
+
+## Data sources and collection
+
+Use the waitlist tracker for the entry date, the last contact date, and the availability fields. Use the scheduling system to confirm whether an offer was made. If the tracker does not record what was confirmed, the review can use dated notes, but it should label them as approximate. A note that says client called is not enough unless it records what changed.
+
+Export the waitlist at the observation time and keep the export with the review. A live list changes as offers are made, so a later export may not reproduce the finding. If an entry is corrected after the export, keep the correction separate. The original snapshot is the evidence for the staleness measure.
+
+Use a pseudonymous key and keep the crosswalk restricted. The review file should not include clinical detail or the reason for the referral. Record the service, the entry date, the last confirmed contact, the availability age, and whether an offer was made. A short record is easier to audit and safer to store.
+
+## Evidence standard
+
+A contact date counts as evidence when the record shows a dated interaction and what was confirmed. A note that says confirmed availability without a date is weak because the reviewer cannot tell how old the confirmation is. If the practice uses a portal, keep the message record that shows the client's reply. A phone call should have a dated note with the confirmed details.
+
+An availability field counts as current only when the confirmation date is within the practice's defined freshness window. The window should be written down before the review. Thirty days is a common choice for an active waitlist, but the practice may choose a different period based on its turnaround. The report should state the window and apply it consistently.
+
+State what the review does not measure. It does not measure the client's ongoing need for service or the clinical appropriateness of an offer. It does not prove that a fresher record will produce a successful match. The finding describes how old the contact and availability details are. Those details are a precondition for a good offer, not a guarantee of one.
+
+## Analysis and reporting
+
+Report the age distribution with the median, ninetieth percentile, and maximum. Report the share of entries older than the freshness window and the share never refreshed since intake. Break the result down by service and source, with counts. A high rate in one service may point to a different intake path rather than a general waitlist problem.
+
+Report the availability age separately from the contact age. A list can have current phone numbers and outdated scheduling preferences. The fix for the first is a contact update, while the fix for the second is a scheduling conversation. Combining them into one score obscures which action is needed. The report should show both numbers side by side.
+
+Read the oldest entries individually. A record that has been open for a year may have been contacted several times without a confirmed update. The reviewer should note whether the practice made a reasonable attempt and whether the entry should be closed under the practice's rule. A closure decision is not a clinical decision, but it should follow a written administrative rule.
+
+## Limits and sources of error
+
+The largest error is a tracker that records only the entry date and not the confirmation date. Without a confirmation date, the review cannot measure staleness accurately. The finding should say the measure is approximate and the practice should add a confirmation date field. A simple date field is more useful than a long note field.
+
+A second error is a contact that happened but was recorded in another system. A scheduling call may be logged in the phone system rather than the waitlist. The review should check whether a second source exists and, if so, match it with a written rule. A missing match is a finding about the record, not proof that no contact happened.
+
+A third error is an availability window that was updated without a client conversation. A coordinator may have changed the field based on an old note or an assumption. The review should compare a sample of updates with the source interaction. If updates are not supported, the availability age is less trustworthy than it appears.
+
+## Review cadence
+
+Run the review at quarter start and after any change to the waitlist tracker or intake form. Keep the freshness window and the definition of confirmed contact stable across cycles. If the practice changes its tracker, rebuild the baseline and label the break. A trend built on different definitions is hard to interpret.
+
+Assign the review to the waitlist owner and a backup. The reviewer should be able to export the list and check a sample of confirmations without waiting for a vendor. Document the export path and the fields used. A review that depends on one person's access is easy to postpone.
+
+Close each cycle with one change and a follow-up date. The change might be a thirty-day refresh rule, a required confirmation date, or a script that asks about availability and channel together. At the next cycle, check the same age measure and the same tail. If the change did not move the number, inspect whether the field is being used as designed before adding another reminder.
+## Sources
+
+- Substance Abuse and Mental Health Services Administration: https://www.samhsa.gov/
+- U.S. Department of Health and Human Services: https://www.hhs.gov/
+- HHS Office for Civil Rights, HIPAA: https://www.hhs.gov/hipaa/
+- Centers for Medicare and Medicaid Services: https://www.cms.gov/
+- Agency for Healthcare Research and Quality: https://www.ahrq.gov/
+- National Institute of Mental Health: https://www.nimh.nih.gov/
+- Health Resources and Services Administration: https://www.hrsa.gov/
+- NIST Privacy Framework: https://www.nist.gov/privacy-framework
+- Federal Trade Commission, health privacy: https://www.ftc.gov/business-guidance/privacy-security/health-privacy
+- U.S. Bureau of Labor Statistics: https://www.bls.gov/
