@@ -78,7 +78,7 @@
 .contact-prepare-long{gap:clamp(3rem,6vw,6rem);padding-block:var(--section-space)}
 .contact-heading-long{margin-bottom:clamp(2.25rem,4vw,3rem)}
 @media(min-width:1100px){.contact-conversion-grid{align-items:start}}
-@media(max-width:1099px){.contact-form-card{width:100%;max-width:none}.contact-conversion-copy{padding-top:0}}
+@media(max-width:1099px){.contact-conversion-grid{grid-template-columns:minmax(0,1fr)}.contact-form-card{width:100%;max-width:none}.contact-conversion-copy{padding-top:0}}
 @media(max-width:760px){
   .contact-shell{width:min(calc(100% - 2rem),var(--shell))}
   .contact-conversion,.contact-parent,.contact-process-long,.contact-boundaries-long,.contact-prepare-long,.contact-starting-long,.contact-faq-long{padding-block:4.25rem}
