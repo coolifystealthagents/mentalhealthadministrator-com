@@ -65,3 +65,24 @@
 @media(max-width:900px){.contact-parent-grid,.contact-two-col,.contact-prepare-long{grid-template-columns:1fr}.contact-step-grid-long{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.contact-shell{width:min(calc(100% - 2rem),1240px)}.contact-conversion,.contact-parent,.contact-process-long,.contact-boundaries-long,.contact-prepare-long,.contact-starting-long,.contact-faq-long{padding-block:4.5rem}.contact-form-card form{grid-template-columns:1fr}.contact-form-card form>.form-row,.contact-form-card form>.form-phone-row{display:grid;grid-template-columns:1fr;grid-column:1/-1}.contact-step-grid-long,.contact-card-grid-long,.contact-link-grid-long{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.review-marquee-track{overflow-x:auto;scrollbar-width:auto}}
+
+/* Shared commercial-page rhythm and alignment */
+.contact-shell{width:min(calc(100% - 3rem),var(--shell))}
+.contact-conversion{padding-block:var(--section-space)}
+.contact-conversion-grid{grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:clamp(3rem,5vw,4.5rem);align-items:start}
+.contact-conversion-copy{padding-top:clamp(.75rem,1.5vw,1.5rem)}
+.contact-conversion h1{font-size:clamp(3.5rem,4.8vw,5.25rem)}
+.contact-parent,.contact-process-long,.contact-boundaries-long,.contact-starting-long,.contact-faq-long{padding-block:var(--section-space)}
+.contact-parent-grid,.contact-two-col{gap:clamp(2.5rem,5vw,5rem);align-items:start}
+.contact-parent h2,.contact-process-long h2,.contact-boundaries-long h2{font-size:clamp(2.8rem,4.5vw,4.8rem)}
+.contact-prepare-long{gap:clamp(3rem,6vw,6rem);padding-block:var(--section-space)}
+.contact-heading-long{margin-bottom:clamp(2.25rem,4vw,3rem)}
+@media(min-width:1100px){.contact-conversion-grid{align-items:start}}
+@media(max-width:1099px){.contact-form-card{width:100%;max-width:none}.contact-conversion-copy{padding-top:0}}
+@media(max-width:760px){
+  .contact-shell{width:min(calc(100% - 2rem),var(--shell))}
+  .contact-conversion,.contact-parent,.contact-process-long,.contact-boundaries-long,.contact-prepare-long,.contact-starting-long,.contact-faq-long{padding-block:4.25rem}
+  .contact-conversion h1{font-size:clamp(3rem,13vw,4.1rem)}
+  .contact-parent h2,.contact-process-long h2,.contact-boundaries-long h2{font-size:clamp(2.45rem,11vw,3.4rem)}
+  .contact-parent-grid,.contact-two-col{gap:2.25rem}
+}
