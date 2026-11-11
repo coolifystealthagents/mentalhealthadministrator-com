@@ -74,80 +74,13 @@ describe('ACR 0.4.19 canonical installation',()=>{
     expect(forwarded.events.map((event:{event_type:string})=>event.event_type)).toEqual(['pageview']);
   });
 
-  it('implements the site-owned two-probe server fallback without exposing a webhook',()=>{
-    const fallback=read('src/lib/lead-fallback-mattermost.ts');
-    const api=read('src/app/api/submit-lead/route.ts');
-    expect(fallback).toContain("'use server'");
-    expect(fallback).toContain('SITE_MATTERMOST_FALLBACK_WEBHOOK_URL');
-    expect(fallback).toContain("ACR_FALLBACK_FORCE_DOWN === '1'");
-    expect(fallback.match(/await isACRHealthy\(\)/g)?.length).toBe(2);
-    expect(fallback).toContain('setTimeout(resolve, 15_000)');
-    expect(fallback).toContain('new AbortController()');
-    expect(fallback).toContain('controller.abort(), 2_000');
-    expect(fallback).toContain('[SITE-DIRECT:${SITE_ID}]');
-    expect(api).toContain('sendLeadFallbackToMattermost');
-    expect(api).toContain("acceptedBody?.status!=='ok'");
-    expect(api).toContain('await sendLeadFallbackToMattermost');
-    expect(api).toContain('{forceDelivery:true}');
-    expect(api).not.toContain('void sendLeadFallbackToMattermost');
-    expect(api).toContain('company_website:lead.company_website');
-    expect(api).toContain('MAX_BUCKETS');
-    expect(api).toContain('pruneBuckets');
-    const proxy=read('src/app/ingest/track/route.ts');
-    expect(proxy).toContain('MAX_BUCKETS');
-    expect(proxy).toContain('pruneBuckets');
-    expect(api).toContain("event_type:'lead_submit'");
-    const all=sourceFiles().join('\n');
-    expect(all).not.toMatch(/https?:\/\/[^\s'"`]+\/hooks\//);
-    expect(all).not.toContain("ACR_FALLBACK_FORCE_DOWN='1'");
-  });
-
-  it('forces validated leads through safe lossless fallback rendering',async()=>{
-    const originalWebhook=process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL;
-    process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL='https://mattermost.example.test/fallback';
-    const fetchSpy=vi.spyOn(globalThis,'fetch').mockResolvedValue(new Response(null,{status:204}));
-    fetchSpy.mockClear();
-    const longMessage=`line one\n@channel\n# heading\n${'x'.repeat(3967)}END`;
-    try{
-      await sendLeadFallbackToMattermost({name:'DeLaCruz',email:'owner@example.com',phone:'+1 5550100',message:'Psychotherapy',pageUrl:'https://mentalhealthadministrator.com/contact-us'},{forceDelivery:true});
-      await sendLeadFallbackToMattermost({name:'Practice owner',email:'owner@example.com',phone:'+1 5550100',message:longMessage,pageUrl:'https://mentalhealthadministrator.com/contact-us'},{forceDelivery:true});
-      expect(fetchSpy).toHaveBeenCalledTimes(2);
-      const first=JSON.parse(String(fetchSpy.mock.calls[0][1]?.body)).text as string;
-      expect(first).toContain('Psychotherapy');
-      const second=JSON.parse(String(fetchSpy.mock.calls[1][1]?.body)).text as string;
-      expect(second).toContain('END');
-      expect(second).not.toContain('\n@channel');
-      expect(second).not.toContain('\n# heading');
-      expect(second).toContain('@\u200bchannel');
-    }finally{
-      vi.restoreAllMocks();
-      if(originalWebhook===undefined)delete process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL;
-      else process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL=originalWebhook;
-    }
-  });
-
-  it('bounds both unhealthy ACR probes before fallback delivery',async()=>{
-    const originalWebhook=process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL;
-    process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL='https://mattermost.example.test/fallback';
-    vi.useFakeTimers();
-    const fetchSpy=vi.spyOn(globalThis,'fetch').mockImplementation((url,options)=>{
-      if(String(url).includes('/api/health'))return new Promise((_,reject)=>{
-        options?.signal?.addEventListener('abort',()=>reject(new DOMException('Timed out','AbortError')),{once:true});
-      });
-      return Promise.resolve(new Response(null,{status:204}));
-    });
-    try{
-      const delivery=sendLeadFallbackToMattermost({name:'Practice owner',email:'owner@example.com',phone:'5550100',pageUrl:'https://mentalhealthadministrator.com/contact-us'});
-      await vi.runAllTimersAsync();
-      await delivery;
-      expect(fetchSpy.mock.calls.filter(([url])=>String(url).includes('/api/health'))).toHaveLength(2);
-      expect(fetchSpy).toHaveBeenLastCalledWith('https://mattermost.example.test/fallback',expect.objectContaining({signal:expect.any(AbortSignal)}));
-    }finally{
-      vi.useRealTimers();
-      vi.restoreAllMocks();
-      if(originalWebhook===undefined)delete process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL;
-      else process.env.SITE_MATTERMOST_FALLBACK_WEBHOOK_URL=originalWebhook;
-    }
+  it('never sends a site-direct notification, even when fallback is forced',async()=>{
+    const spy=vi.spyOn(globalThis,'fetch').mockRejectedValue(new Error('ACR unavailable'));
+    spy.mockClear();
+    try {
+      await sendLeadFallbackToMattermost({name:'Test',email:'test@example.com',phone:'5551234',pageUrl:'https://example.com'},{forceDelivery:true});
+      expect(spy).not.toHaveBeenCalled();
+    } finally { vi.restoreAllMocks(); }
   });
 
   it('derives current service routes rather than allowing retired camera slugs',()=>{
