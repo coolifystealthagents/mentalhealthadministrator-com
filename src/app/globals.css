@@ -85,3 +85,15 @@ footer{padding:clamp(5rem,7vw,6.25rem) 0 2rem}
   .takeaways{margin:2rem 0 3rem}
   .article-grid{gap:1.5rem}
 }
+
+/* Scoped photographic hero crops for Services, Blog, and Research. */
+.listing-hero-image{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center}
+.services-index-photo img{object-position:50% 50%}
+@media(max-width:1100px){
+  .listing-hero-image{aspect-ratio:16/10}
+  .services-index-photo img{object-position:50% 50%}
+}
+@media(max-width:650px){
+  .listing-hero-image{aspect-ratio:4/3}
+  .services-index-photo img{object-position:52% 50%}
+}

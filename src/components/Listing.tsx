@@ -22,10 +22,10 @@ function relatedFor(item: ContentItem) {
   })).sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title)).slice(0, 3).map(({ entry }) => entry);
 }
 
-export function ContentListing({ title, intro, items, base, image, children, currentPage = 1, totalItems = items.length, pageSize = 12 }: { title: string; intro: string; items: ContentItem[]; base: string; image: string; children?: React.ReactNode; currentPage?: number; totalItems?: number; pageSize?: number }) {
+export function ContentListing({ title, intro, items, base, image, imageAlt, children, currentPage = 1, totalItems = items.length, pageSize = 12 }: { title: string; intro: string; items: ContentItem[]; base: string; image: string; imageAlt?: string; children?: React.ReactNode; currentPage?: number; totalItems?: number; pageSize?: number }) {
   const totalPages = Math.ceil(totalItems / pageSize);
   return <>
-    <section className="hero shell"><div><p className="eyebrow">Editorial library</p><h1>{title}</h1><p className="lede">{intro}</p></div><img src={image} alt={`${title} library illustration`} /></section>
+    <section className="hero shell"><div><p className="eyebrow">Editorial library</p><h1>{title}</h1><p className="lede">{intro}</p></div><img className="listing-hero-image" src={image} alt={imageAlt || `${title} library illustration`} /></section>
     {children}
     <section className="section shell">
       <div className="cards content-cards">{items.map((item) => <article className="card" key={item.slug}>
