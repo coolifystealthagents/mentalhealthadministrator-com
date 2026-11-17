@@ -100,3 +100,17 @@ footer{padding:clamp(5rem,7vw,6.25rem) 0 2rem}
   .listing-hero-image{aspect-ratio:4/3}
   .services-index-photo img{object-position:52% 50%}
 }
+
+/* Shared page safeguards within the existing visual system. */
+html{scroll-padding-top:110px}
+main,section,article,aside,figure{min-width:0}
+img{max-width:100%}
+button,a,input,select,textarea{touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+footer nav a{display:inline-block;padding-block:5px}
+@media(max-width:600px){h1{overflow-wrap:normal;word-break:normal}p,li{overflow-wrap:break-word}table{max-width:100%}section{scroll-margin-top:100px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.practice-photo{margin:0;min-width:0}.practice-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}.practice-photo figcaption{font-size:13px;padding-top:14px;line-height:1.5}.practice-desk-hero h1{font-size:clamp(38px,4vw,66px);line-height:1.08}.service-hero-media img{width:100%;object-fit:cover;aspect-ratio:4/3}
+
+.practice-photo img{height:auto;aspect-ratio:4/3;object-position:center}.practice-photo{align-self:center}
