@@ -9,7 +9,7 @@ export function ReviewMarquee(){
   useEffect(()=>{
     const element=viewport.current;
     if(!element)return;
-    const reduced=window.matchMedia('prefers-reduced-motion: reduce');
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
     let frame=0;
     let previous=0;
     let hovered=false;

@@ -86,3 +86,11 @@
   .contact-parent h2,.contact-process-long h2,.contact-boundaries-long h2{font-size:clamp(2.45rem,11vw,3.4rem)}
   .contact-parent-grid,.contact-two-col{gap:2.25rem}
 }
+
+/* November standards correction */
+
+.contact-conversion{padding-block:28px}.contact-conversion-grid{gap:36px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.contact-conversion h1{font-size:clamp(36px,3.4vw,50px);line-height:1.08}.contact-form-card h2{font-size:30px}.contact-form-card{padding:20px}.contact-form-card form{gap:8px 14px}.contact-form-card form>label{grid-column:auto}.contact-form-card form>label:has(textarea),.contact-form-card form>label:has(input[type=email]){grid-column:1/-1}.contact-form-card input,.contact-form-card select{height:34px;min-height:34px;font-size:14px}.contact-form-card textarea{height:54px;min-height:54px}.contact-form-card label{font-size:12px}.contact-form-card form>.form-warning{font-size:11px;padding:6px}.contact-conversion-copy>p{font-size:16px;line-height:1.5}
+@media(max-width:1099px){.contact-conversion-grid{grid-template-columns:1fr}}@media(max-width:760px){.contact-form-card form>label{grid-column:1/-1}.contact-form-card input,.contact-form-card select{height:44px;font-size:16px}.contact-form-card textarea{height:88px;font-size:16px}}
+
+
+.contact-form-card form label{display:block;line-height:1.35}.contact-form-card form label>span{display:inline}.contact-form-card form label>input,.contact-form-card form label>select,.contact-form-card form label>textarea{display:block;margin-top:3px}.contact-form-card form>label:has(input[type=email]){grid-column:1/-1}

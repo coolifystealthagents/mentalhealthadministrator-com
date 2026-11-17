@@ -114,3 +114,15 @@ footer nav a{display:inline-block;padding-block:5px}
 .practice-photo{margin:0;min-width:0}.practice-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}.practice-photo figcaption{font-size:13px;padding-top:14px;line-height:1.5}.practice-desk-hero h1{font-size:clamp(38px,4vw,66px);line-height:1.08}.service-hero-media img{width:100%;object-fit:cover;aspect-ratio:4/3}
 
 .practice-photo img{height:auto;aspect-ratio:4/3;object-position:center}.practice-photo{align-self:center}
+
+/* November standards correction */
+
+.standard-service-thumb{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin:0 0 20px;border-radius:inherit}
+
+
+/* The primary header remains at the top for the entire document. */
+.site-header{position:sticky;top:0;z-index:1000}
+html{scroll-padding-top:110px}body{overflow-x:clip}
+.standard-brand-credit{display:block!important;font:500 10px/1.5 Arial,sans-serif!important;letter-spacing:.02em!important;text-transform:none!important;margin-top:3px;color:inherit;white-space:nowrap}
+header .brand>span{min-width:0}header nav{margin-left:auto}
+@media(max-width:700px){.standard-brand-credit{font-size:9px!important}}
