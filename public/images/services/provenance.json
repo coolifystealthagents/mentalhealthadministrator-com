@@ -1,0 +1,175 @@
+{
+  "provider": "Pexels",
+  "license": "https://www.pexels.com/license/",
+  "usageNote": "Illustrative stock photography. Subjects are not identified as employees, clients, or representatives of Mental Health Administrator or Stealth Agents.",
+  "processing": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "format": "WebP",
+    "method": "Pillow ImageOps.fit with Lanczos resampling and recorded focal centering"
+  },
+  "assets": [
+    {
+      "slug": "mental-health-intake-and-referral-coordination",
+      "photoId": "3760093",
+      "photoPage": "https://www.pexels.com/photo/man-and-woman-sitting-on-table-while-staring-at-white-paper-3760093/",
+      "sourcePath": "/workspace/sdr-services-card-evidence/selected-originals/prospect-research-3760093.jpg",
+      "sourceSha256": "3564d0276ced408dd00046a98b883167b6944a44405441b0d702628dd9f21155",
+      "sourceDimensions": [
+        7680,
+        5120
+      ],
+      "focalCenter": [
+        0.42,
+        0.5
+      ],
+      "pixelReview": "Active source-document and tablet review before an intake handoff",
+      "outputPath": "/images/services/mental-health-intake-and-referral-coordination.webp",
+      "outputSha256": "5882b41c6613899acaedc0ae62934188f9455f5e64ea01e24ad17e89b8a9f12e",
+      "outputBytes": 40840,
+      "quality": 84
+    },
+    {
+      "slug": "mental-health-appointment-scheduling",
+      "photoId": "3182781",
+      "photoPage": "https://www.pexels.com/photo/people-having-a-meeting-3182781/",
+      "sourcePath": "/workspace/sdr-services-card-evidence/selected-originals/meeting-coordination-3182781.jpg",
+      "sourceSha256": "84ccc789a8b87f3743c63917dd9c9af78c82af17e377fb56db735ba3c675f8cc",
+      "sourceDimensions": [
+        6000,
+        4004
+      ],
+      "focalCenter": [
+        0.51,
+        0.5
+      ],
+      "pixelReview": "Working coordination meeting with notebooks and calendars",
+      "outputPath": "/images/services/mental-health-appointment-scheduling.webp",
+      "outputSha256": "7c499f801284ef38b5c92214e15bbf1af235ea0d52ff22026e6bb611deed980a",
+      "outputBytes": 119074,
+      "quality": 84
+    },
+    {
+      "slug": "mental-health-client-communication",
+      "photoId": "3768131",
+      "photoPage": "https://www.pexels.com/photo/3768131/",
+      "sourcePath": "/workspace/sdr-services-card-evidence/source-downloads/outreach-operations-3768131.jpg",
+      "sourceSha256": "dae19239878fac60861b0d47e06e214036b8d8d9189a6143b4e8b426beeb804a",
+      "sourceDimensions": [
+        2400,
+        1600
+      ],
+      "focalCenter": [
+        0.57,
+        0.5
+      ],
+      "pixelReview": "Private, attentive client conversation",
+      "outputPath": "/images/services/mental-health-client-communication.webp",
+      "outputSha256": "071a96164668baa07cf790322abb88dcaa1df15a5939f09403f8ffc34ad9bf3e",
+      "outputBytes": 140122,
+      "quality": 84
+    },
+    {
+      "slug": "behavioral-health-insurance-administration",
+      "photoId": "5668858",
+      "photoPage": "https://www.pexels.com/photo/5668858/",
+      "sourcePath": "/workspace/sdr-services-card-evidence/selected-originals/list-building-enrichment-5668858.jpg",
+      "sourceSha256": "9f29b8419c1855fbee6c5cca668aee1b76e8fc326b6d6474357cf61e03eedb1b",
+      "sourceDimensions": [
+        6000,
+        4000
+      ],
+      "focalCenter": [
+        0.5,
+        0.56
+      ],
+      "pixelReview": "Paper-based source verification beside a laptop; printed details are unreadable",
+      "outputPath": "/images/services/behavioral-health-insurance-administration.webp",
+      "outputSha256": "dd2206f24b5f80d04a212d14c7bc22e62bbe73ece8fdf06185991184c14d6877",
+      "outputBytes": 60154,
+      "quality": 84
+    },
+    {
+      "slug": "mental-health-billing-and-claims-follow-up",
+      "photoId": "3760067",
+      "photoPage": "https://www.pexels.com/photo/3760067/",
+      "sourcePath": "/workspace/sdr-services-card-evidence/selected-originals/sequence-quality-review-3760067.jpg",
+      "sourceSha256": "966624388703e83a203be7603827b52b6a93037e4e98f38e2c775a8be68799f8",
+      "sourceDimensions": [
+        2400,
+        1600
+      ],
+      "focalCenter": [
+        0.5,
+        0.58
+      ],
+      "pixelReview": "Pen-and-document review for a bounded claims findings check",
+      "outputPath": "/images/services/mental-health-billing-and-claims-follow-up.webp",
+      "outputSha256": "a8bd014277b8229058ac87081d81d43e936ee39c7e73ba2e91c552b00194d82e",
+      "outputBytes": 28414,
+      "quality": 84
+    },
+    {
+      "slug": "mental-health-ehr-and-records-administration",
+      "photoId": "6248972",
+      "photoPage": "https://www.pexels.com/photo/6248972/",
+      "sourcePath": "/workspace/sdr-services-card-evidence/selected-originals/crm-hygiene-6248972.jpg",
+      "sourceSha256": "989a48b9e4fa73e53240a2f50485692f8533010992df27c926daa4c43f7495f2",
+      "sourceDimensions": [
+        7243,
+        4829
+      ],
+      "focalCenter": [
+        0.53,
+        0.5
+      ],
+      "pixelReview": "Professionals reviewing shared records at a workstation; interface details are unreadable",
+      "outputPath": "/images/services/mental-health-ehr-and-records-administration.webp",
+      "outputSha256": "ffc76a57b228c3b402f50a742b6590dbbb355b19e6c6d17750bc6308e6d6baa8",
+      "outputBytes": 142804,
+      "quality": 84
+    },
+    {
+      "slug": "mental-health-provider-credentialing-support",
+      "photoId": "3760072",
+      "photoPage": "https://www.pexels.com/photo/3760072/",
+      "sourcePath": "/tmp/mha-detail-sources/pexels-3760072.jpg",
+      "sourceSha256": "70707d39dff8f8ad608bf2b96be1cfd501d770760ec70a2bc8d0447e9abab630",
+      "sourceDimensions": [
+        6000,
+        4000
+      ],
+      "focalCenter": [
+        0.5,
+        0.5
+      ],
+      "pixelReview": "Controlled handoff of provider source documents",
+      "outputPath": "/images/services/mental-health-provider-credentialing-support.webp",
+      "outputSha256": "b18845adb1634c4d3d707b5f47bf2e5d0dd70de3f99c1ac14604cc433e8cf039",
+      "outputBytes": 37566,
+      "quality": 84
+    },
+    {
+      "slug": "mental-health-practice-reporting-and-workflows",
+      "photoId": "7947758",
+      "photoPage": "https://www.pexels.com/photo/7947758/",
+      "sourcePath": "/tmp/mha-detail-sources/pexels-7947758.jpg",
+      "sourceSha256": "1521aa042a10ee57a53f2464f7a1877fe052b29c7a939407fc3c8e5c12b742c7",
+      "sourceDimensions": [
+        6214,
+        4143
+      ],
+      "focalCenter": [
+        0.5,
+        0.5
+      ],
+      "pixelReview": "Practice workflow report and trend review",
+      "outputPath": "/images/services/mental-health-practice-reporting-and-workflows.webp",
+      "outputSha256": "49bdfb2b179cb09fc572a5d52bda67f9c6728b337053de91f11b9ee1f18fc249",
+      "outputBytes": 130010,
+      "quality": 84
+    }
+  ]
+}

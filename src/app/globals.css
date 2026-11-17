@@ -56,7 +56,8 @@ footer{padding:clamp(5rem,7vw,6.25rem) 0 2rem}
 .service-directory-card{padding:clamp(1.5rem,2.5vw,2rem)}
 .services-launch>.shell{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
 .article-shell{--article-sidebar:clamp(290px,24vw,330px)}
-.article-header{max-width:1000px;margin:2.5rem auto}
+.article-header{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:clamp(2rem,5vw,4.5rem);width:100%;margin:2.5rem 0}
+.article-header-copy{min-width:0}.article-header-copy h1{font-size:clamp(3rem,5.2vw,5.75rem);overflow-wrap:anywhere}.article-header-copy .lede{max-width:38rem}.article-hero{display:block;width:100%;height:auto;object-fit:contain;object-position:center}
 .takeaways{max-width:960px;margin:2.5rem auto 3.5rem}
 .article-grid{width:100%;grid-template-columns:minmax(0,1fr) var(--article-sidebar);gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
 .article-sidebar{top:112px;max-height:none;overflow:visible;overscroll-behavior:auto;padding-right:0;gap:1.25rem}
@@ -81,7 +82,9 @@ footer{padding:clamp(5rem,7vw,6.25rem) 0 2rem}
   .services-index-hero{padding:3.75rem 0 4.25rem}
   .services-index-copy h1{font-size:clamp(3rem,13vw,4.1rem)}
   .services-index-photo{min-height:420px}
-  .article-header{margin:2rem auto}
+  .article-header{grid-template-columns:1fr}
+  .article-header{gap:1.75rem;margin:2rem 0}
+  .article-header-copy{order:1}.article-hero{order:2}
   .takeaways{margin:2rem 0 3rem}
   .article-grid{gap:1.5rem}
 }

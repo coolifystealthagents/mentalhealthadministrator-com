@@ -53,11 +53,13 @@ export function ContentDetail({ item }: { item: ContentItem }) {
     <article className="section shell article-shell">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: section.label, href: section.path }, { label: item.title, href: `${section.path}/${item.slug}` }]} />
       <header className="article-header">
-        <p className="eyebrow">{item.category}</p>
-        <h1>{item.pageH1 || item.title}</h1>
-        <p className="lede">{item.description}</p>
-        <p className="fine">Published <time dateTime={item.publishedAt}>{new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(`${item.publishedAt}T00:00:00Z`))}</time> · Updated {item.updatedAt} · {item.readingTime} · {item.author}</p>
-        {item.kind === 'research' && <p className="research-badge">Sources: {item.sourceCount} · Last verified: {item.lastVerified}</p>}
+        <div className="article-header-copy">
+          <p className="eyebrow">{item.category}</p>
+          <h1>{item.pageH1 || item.title}</h1>
+          <p className="lede">{item.description}</p>
+          <p className="fine">Published <time dateTime={item.publishedAt}>{new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(`${item.publishedAt}T00:00:00Z`))}</time> · Updated {item.updatedAt} · {item.readingTime} · {item.author}</p>
+          {item.kind === 'research' && <p className="research-badge">Sources: {item.sourceCount} · Last verified: {item.lastVerified}</p>}
+        </div>
         <img className="article-hero" src={item.featuredImage} alt={item.heroImageAlt} />
       </header>
       <KeyTakeaways items={item.keyTakeaways} />

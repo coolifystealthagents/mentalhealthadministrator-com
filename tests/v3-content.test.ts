@@ -28,7 +28,7 @@ describe('V3 service and editorial content contract', () => {
   it('gives every service its own media, inputs, controls, and FAQs', () => {
     expect(services).toHaveLength(8);
     for (const service of services) {
-      expect(service.image).toBe(`/images/${service.slug}.svg`);
+      expect(service.image).toBe(`/images/services/${service.slug}.webp`);
       expect(service.imageAlt.length).toBeGreaterThan(30);
       expect(service.inputs.length).toBeGreaterThanOrEqual(4);
       expect(service.qualityControls.length).toBeGreaterThanOrEqual(4);
