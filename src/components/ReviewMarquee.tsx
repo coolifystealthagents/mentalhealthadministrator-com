@@ -12,35 +12,38 @@ export function ReviewMarquee(){
     const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
     let frame=0;
     let previous=0;
-    let hovered=false;
+    let motionOffset=element.scrollLeft;
+    
     let focused=false;
 
-    const stopped=()=>reduced.matches||hovered||focused||document.hidden;
+    const stopped=()=>reduced.matches||focused||document.hidden;
     const move=(time:number)=>{
       if(stopped()){frame=0;previous=0;return}
-      if(previous)element.scrollLeft+=(time-previous)*0.025;
+      if(previous)motionOffset+=Math.min(time-previous,50)*0.025;
+      element.scrollLeft=Math.round(motionOffset);
       previous=time;
       const first=element.firstElementChild as HTMLElement|null;
       if(first){
         const gap=Number.parseFloat(getComputedStyle(element).columnGap)||0;
         const distance=first.getBoundingClientRect().width+gap;
-        if(element.scrollLeft>=distance){
+        if(motionOffset>=distance){
           element.appendChild(first);
-          element.scrollLeft-=distance;
+          motionOffset-=distance;
+          element.scrollLeft=Math.round(motionOffset);
         }
       }
       frame=requestAnimationFrame(move);
     };
     const stop=()=>{cancelAnimationFrame(frame);frame=0;previous=0};
     const start=()=>{stop();if(!stopped())frame=requestAnimationFrame(move)};
-    const mouseEnter=()=>{hovered=true;stop()};
-    const mouseLeave=()=>{hovered=false;start()};
+    
+    
     const focusIn=()=>{focused=true;stop()};
     const focusOut=(event:FocusEvent)=>{if(!event.relatedTarget||!element.contains(event.relatedTarget as Node)){focused=false;start()}};
     const visibility=()=>document.hidden?stop():start();
 
-    element.addEventListener('mouseenter',mouseEnter);
-    element.addEventListener('mouseleave',mouseLeave);
+    
+    
     element.addEventListener('focusin',focusIn);
     element.addEventListener('focusout',focusOut);
     reduced.addEventListener('change',start);
@@ -48,8 +51,8 @@ export function ReviewMarquee(){
     start();
     return()=>{
       stop();
-      element.removeEventListener('mouseenter',mouseEnter);
-      element.removeEventListener('mouseleave',mouseLeave);
+      
+      
       element.removeEventListener('focusin',focusIn);
       element.removeEventListener('focusout',focusOut);
       reduced.removeEventListener('change',start);
@@ -59,7 +62,7 @@ export function ReviewMarquee(){
 
   return <section className="review-marquee" aria-labelledby="review-marquee-title">
     <p className="eyebrow light" id="review-marquee-title">StealthAgents reviews</p>
-    <div className="review-marquee-track" ref={viewport} role="list" tabIndex={0} aria-label="Verified StealthAgents client reviews. Focus or hover to pause.">
+    <div className="review-marquee-track" ref={viewport} role="list" tabIndex={0} aria-label="Verified StealthAgents client reviews. Focus to pause.">
       {reviews.map(review=><figure className="review-card" role="listitem" key={`${review.name}:${review.quote}`}>
         <div className="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
         <h3>Client perspective</h3>
